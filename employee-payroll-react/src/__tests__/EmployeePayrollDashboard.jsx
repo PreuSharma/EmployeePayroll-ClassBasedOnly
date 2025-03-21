@@ -1,4 +1,5 @@
 import { render,screen } from "@testing-library/react";
+import EmployeePayrollDashboard from "../components/EmployeePayrollDashboard/EmployeePayrollDashboard";
 
 test('render dashboard container', () => {
     render(<EmployeePayrollDashboard/>);
