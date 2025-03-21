@@ -1,8 +1,9 @@
-import "./App.css";
-import EmployeePayrollDashboard from "./components/EmployeePayrollDashboard/EmployeePayrollDashboard";
+import RoutingModule from "./routes/RoutingModule";
 
 function App() {
-  return <EmployeePayrollDashboard />;
+  return (
+  <RoutingModule/>
+  )
 }
 
 export default App;
