@@ -5,22 +5,17 @@ import Img from "../../assets/logo.jpg";
 export default class Navbar extends Component {
   render() {
     return (
-      <div className="navbar">
-        
-
-        <div className="emp-reg-header-cnt">
-
-          <div className="logo">
-            <img className="img-logo" src={Img} alt="Company Logo" />
+      <nav className="navbar">
+        <div className="navbar-container">
+          <div>
+            <img src={Img} alt="Company Logo" />
           </div>
-
-          <div className="emp">
+          <div className="navbar-employee-payroll">
             <div>EMPLOYEE</div>
-            <div className="brPayroll">PAYROLL</div>
+            <div className="navbar-brPayroll">PAYROLL</div>
           </div>
-
         </div>
-      </div>
+      </nav>
     );
   }
 }
