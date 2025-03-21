@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
+import Navbar from '../Navbar/Navbar'
 
 export class EmployeePayrollDashboard extends Component {
   render() {
     return (
-      <div>
-        Dashboard Container
-      </div>
+        <Navbar/>
     )
   }
 }
