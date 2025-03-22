@@ -7,7 +7,9 @@ export class HomePage extends Component {
     return (
       <div>
         <Navbar />
-        <Outlet/>
+        <div style={{ marginTop: "10vh" }}>
+          <Outlet />
+        </div>
       </div>
     );
   }

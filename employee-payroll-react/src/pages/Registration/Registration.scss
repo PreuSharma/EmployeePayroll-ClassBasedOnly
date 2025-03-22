@@ -1,0 +1,182 @@
+.registration-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+}
+.registration-form-container{
+    width: 70%;
+    background-color:#ffffff;
+    padding: 3rem 7rem;
+}
+.registration-form-title{
+    margin-bottom: 5rem;
+    color: #42515F;
+    font: normal normal bold 28px/37px Roboto;
+}
+
+/*main*/
+.form-cnt-name{
+    display: flex;
+    gap: 5rem;
+}
+.label{
+    color: #42515F;
+    font-size: 1.1rem;
+}
+#form-cnt-name-textbox{
+    font-size: large;
+    width: 30vw;
+    height: 4vh;
+}
+
+
+/* Profile Image Section */
+
+.form-cnt-profile{
+    display: flex;
+    gap: 3%;
+    margin-top: 5%;
+
+}
+
+.form-cnt-profile-imgradio{
+    display: flex;
+    gap: 2rem;
+}
+
+.profileimg-1{
+    display: flex;
+    margin-left: -1.5%;
+}
+
+.profileimg-2{
+    display: flex;
+}
+.profileimg-3{
+    display: flex;
+}
+.profileimg-4{
+    display: flex;
+}
+
+.radio-btn{
+    margin-top:22% ;
+}
+
+.circular1,
+.circular2,
+.circular3,
+.circular4 {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+
+
+
+
+
+
+/* Gender Section */
+.formGender {
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.genderMale {
+    display: flex;
+    margin-left: 10.2%;
+    font-size: 1.1rem;
+}
+
+.genderFemale {
+    display: flex;
+    margin-left: 5%;
+    font-size: 1.1rem;
+}
+
+/* Department Section */
+.formDepartment {
+    display: flex;
+    margin-bottom: 2vh;
+    gap: 0.8%;
+}
+
+.DepartmentHR,
+.DepartmentSales,
+.DepartmentFinance,
+.DepartmentEngineer,
+.DepartmentOthers {
+    margin-left: 4.5%;
+    margin-bottom: 2%;
+}
+
+/* Salary Selection */
+.selectSalary {
+    margin-top: -2.5vh; 
+    margin-left: 20%;
+    margin-bottom: 3%;
+}
+
+/* Start Date Section */
+.formStartDate {
+    display: flex;
+    margin-bottom: 3vh;
+    gap: 2%;
+}
+
+.startDate,
+.startMonth,
+.startYear {
+    margin-left: 5%;
+}
+
+
+
+
+/* Notes */
+
+
+
+.textarea {
+    margin-left: 20%;
+    margin-bottom: 2vh;
+    margin-top: -2vh;
+    
+}
+
+/* Buttons */
+.emp-reg-btn-cnt {
+    display: flex;
+    justify-content: space-between;
+    padding: 1vh 5%;
+}
+
+.btn {
+    padding: 1vh 2vw;
+    color: #42515F;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    padding: 1.2vh 2.2vw;
+    background-color: #82A70C;
+    color: white;
+    font-size: 1rem;
+    border: white;
+}
+
+.regSubmitButton {
+    margin-left: 20%;
+}
+
+.regResetButton {
+    margin-right: 1vw;
+}
+
+
+
