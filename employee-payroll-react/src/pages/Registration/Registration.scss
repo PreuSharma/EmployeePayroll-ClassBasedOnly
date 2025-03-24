@@ -1,23 +1,31 @@
 .registration-container{
     display: flex;
     justify-content: center;
-    margin-top: 7rem;
+    margin-top: 6rem;
 }
-.registration-form-container{
-    width: 70%;
+.registration-form{
+    width: 60%;
+    height: 86vh;
     background-color:#ffffff;
-    padding: 3rem 7rem;
+    padding: 3% 7%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #F5F5F5;
+    border-radius: 8px;
 }
+
+/*main*/
 .registration-form-title{
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     color: #42515F;
     font: normal normal bold 28px/37px Roboto;
 }
 
-/*main*/
+/*Name Section*/
 .form-cnt-name{
     display: flex;
     gap: 5rem;
+    align-items: center;
 }
 .label{
     color: #42515F;
@@ -30,43 +38,31 @@
 }
 
 
-/* Profile Image Section */
+// /* Profile Image Section */
 
 .form-cnt-profile{
     display: flex;
-    gap: 3%;
+    gap: 3.5%;
     margin-top: 5%;
-
+    align-items: center;
 }
 
 .form-cnt-profile-imgradio{
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
-.profileimg-1{
+.form-cnt-profile-imgradio-1,
+.form-cnt-profile-imgradio-2,
+.form-cnt-profile-imgradio-3,
+.form-cnt-profile-imgradio-4{
     display: flex;
-    margin-left: -1.5%;
+    gap: 1rem;
+    align-items: center;
 }
 
-.profileimg-2{
-    display: flex;
-}
-.profileimg-3{
-    display: flex;
-}
-.profileimg-4{
-    display: flex;
-}
-
-.radio-btn{
-    margin-top:22% ;
-}
-
-.circular1,
-.circular2,
-.circular3,
-.circular4 {
+.radio-images{
     width: 5vw;
     height: 5vw;
     border-radius: 50%;
@@ -79,104 +75,130 @@
 
 
 
-
 /* Gender Section */
-.formGender {
+.form-cnt-gender{
     display: flex;
+    gap: 9.5%;
+    margin-top: 5%;
     align-items: center;
-    margin-top: 1%;
 }
 
-.genderMale {
+.form-cnt-gender-radiolabels{
     display: flex;
-    margin-left: 10.2%;
-    font-size: 1.1rem;
+    gap: 2rem;
+    align-items: center;
+}
+.form-cnt-gender-radiolabels-1,
+.form-cnt-gender-radiolabels-2{
+    display: flex;
+    gap: 1rem;
 }
 
-.genderFemale {
-    display: flex;
-    margin-left: 5%;
-    font-size: 1.1rem;
-}
+
 
 /* Department Section */
-.formDepartment {
+.form-cnt-department {
+    margin-top: 5%;
     display: flex;
-    margin-bottom: 2vh;
-    gap: 0.8%;
+    gap: 5.3%;
+    align-items: center;
+
+}
+.form-cnt-department-checkbox{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.form-cnt-department-checkbox-1,
+.form-cnt-department-checkbox-2,
+.form-cnt-department-checkbox-3,
+.form-cnt-department-checkbox-4,
+.form-cnt-department-checkbox-5{
+    display: flex;
+    gap: 1rem;
 }
 
-.DepartmentHR,
-.DepartmentSales,
-.DepartmentFinance,
-.DepartmentEngineer,
-.DepartmentOthers {
-    margin-left: 4.5%;
-    margin-bottom: 2%;
-}
+
+
 
 /* Salary Selection */
-.selectSalary {
-    margin-top: -2.5vh; 
-    margin-left: 20%;
-    margin-bottom: 3%;
-}
 
-/* Start Date Section */
-.formStartDate {
+.form-cnt-salary{
     display: flex;
-    margin-bottom: 3vh;
-    gap: 2%;
+    gap: 10.5%;
+    margin-top: 5%;
+    align-items: center;
 }
 
-.startDate,
-.startMonth,
-.startYear {
-    margin-left: 5%;
+#salary{
+    width: 15vw;
+    height: 4vh;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #BDBDBD;
+    border-radius: 3px;
+    color: #42515F;
+    font: normal normal normal 14px Roboto;
 }
 
 
+ /* Start Date Section */
+
+ .form-cnt-salary-selectStartDate{
+    display: flex;
+    gap: 7%;
+    margin-top: 5%;
+    align-items: center;
+ }
+
+ .form-cnt-salary-selectStartDate-dmy{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+ }
+.dmy{
+    width: 8vw;
+    height: 4vh;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #BDBDBD;
+    border-radius: 3px;
+    color: #42515F;
+    font: normal normal normal 14px Roboto;
+}
 
 
 /* Notes */
-
-
-
-.textarea {
-    margin-left: 20%;
-    margin-bottom: 2vh;
-    margin-top: -2vh;
-    
+.form-cnt-notes{
+    display: flex;
+    gap: 11%;
+    margin-top: 5%;
 }
+
+.textarea{
+    font-size: large;
+    width: 30vw;
+    height: 8vh;
+}
+
+
 
 /* Buttons */
-.emp-reg-btn-cnt {
+.form-cnt-buttons{
     display: flex;
-    justify-content: space-between;
-    padding: 1vh 5%;
+    gap: 26%;
+    align-items: center;
+    margin-top: 5%;
 }
 
-.btn {
-    padding: 1vh 2vw;
+.form-cnt-buttons-submitreset{
+    display: flex;
+    gap: 2rem;
+}
+.btn{
+    width: 8vw;
+    height: 5vh;
+    background: #E2E2E2 0% 0% no-repeat padding-box;
+    border: 1px solid #969696;
+    border-radius: 5px;
+    font: normal normal normal 15px Roboto;
     color: #42515F;
-    font-size: 1rem;
 }
-
-.btn:hover {
-    padding: 1.2vh 2.2vw;
-    background-color: #82A70C;
-    color: white;
-    font-size: 1rem;
-    border: white;
-}
-
-.regSubmitButton {
-    margin-left: 20%;
-}
-
-.regResetButton {
-    margin-right: 1vw;
-}
-
-
-
