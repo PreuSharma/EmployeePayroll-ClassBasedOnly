@@ -85,6 +85,11 @@ class Registration extends Component {
     } else {
       this.setState({ [name]: value });
     }
+
+
+    this.setState({ notes: e.target.value });
+    e.target.style.height = "auto"; 
+    e.target.style.height = e.target.scrollHeight + "px"; 
   };
 
   handleSubmit = async (e) => {
