@@ -5,10 +5,9 @@
 }
 .registration-form{
     width: 60%;
-    height: 86vh;
-    background-color:#ffffff;
+    height: 100vh;
+    background-color: #ffffff;
     padding: 3% 7%;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     border: 1px solid #F5F5F5;
     border-radius: 8px;
@@ -18,7 +17,7 @@
 .registration-form-title{
     margin-bottom: 2rem;
     color: #42515F;
-    font: normal normal bold 28px/37px Roboto;
+    font: normal normal bold 28px/37px sans-serif;
 }
 
 /*Name Section*/
@@ -31,9 +30,9 @@
     color: #42515F;
     font-size: 1.1rem;
 }
-#form-cnt-name-textbox{
+.form-cnt-name-textbox{
     font-size: large;
-    width: 30vw;
+    width: 40vw;
     height: 4vh;
 }
 
@@ -52,6 +51,14 @@
     gap: 2rem;
     align-items: center;
 }
+.profile-images-container {
+    display: flex;
+    gap: 10px; /* Images ke beech gap dene ke liye */
+    align-items: center; /* Radio buttons aur images ko align karne ke liye */
+    flex-wrap: wrap; /* Agar space kam ho to images wrap ho jaye */
+  }
+  
+
 
 .form-cnt-profile-imgradio-1,
 .form-cnt-profile-imgradio-2,
@@ -83,6 +90,8 @@
     align-items: center;
 }
 
+
+
 .form-cnt-gender-radiolabels{
     display: flex;
     gap: 2rem;
@@ -109,11 +118,7 @@
     gap: 2rem;
     align-items: center;
 }
-.form-cnt-department-checkbox-1,
-.form-cnt-department-checkbox-2,
-.form-cnt-department-checkbox-3,
-.form-cnt-department-checkbox-4,
-.form-cnt-department-checkbox-5{
+.form-cnt-department-checkbox-name{
     display: flex;
     gap: 1rem;
 }
@@ -132,12 +137,12 @@
 
 #salary{
     width: 15vw;
-    height: 4vh;
+    height: 5vh;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #BDBDBD;
     border-radius: 3px;
     color: #42515F;
-    font: normal normal normal 14px Roboto;
+    font: normal normal normal 14px sans-serif;
 }
 
 
@@ -156,13 +161,13 @@
     align-items: center;
  }
 .dmy{
-    width: 8vw;
-    height: 4vh;
+    width: 15vw;
+    height: 5vh;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #BDBDBD;
     border-radius: 3px;
     color: #42515F;
-    font: normal normal normal 14px Roboto;
+    font: normal normal normal 14px sans-serif;
 }
 
 
@@ -175,8 +180,9 @@
 
 .textarea{
     font-size: large;
-    width: 30vw;
+    width: 40vw;
     height: 8vh;
+    
 }
 
 
@@ -191,6 +197,7 @@
 
 .form-cnt-buttons-submitreset{
     display: flex;
+    margin-left: 7rem;
     gap: 2rem;
 }
 .btn{
@@ -199,6 +206,145 @@
     background: #E2E2E2 0% 0% no-repeat padding-box;
     border: 1px solid #969696;
     border-radius: 5px;
-    font: normal normal normal 15px Roboto;
+    font: normal normal normal 15px sans-serif;
     color: #42515F;
+    cursor: pointer;
+}
+
+
+
+
+
+.error-message{
+    color: red;
+    margin-left: 20%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1200px) {
+    .registration-form {
+        width: 70%;
+        height: auto;
+        padding: 4%;
+    }
+
+    .registration-form-title {
+        font-size: 1.5rem;
+    }
+
+    .form-cnt-name,
+    .form-cnt-profile,
+    .form-cnt-gender,
+    .form-cnt-department,
+    .form-cnt-salary,
+    .form-cnt-salary-selectStartDate,
+    .form-cnt-notes {
+        gap: 2rem;
+    }
+
+    #form-cnt-name-textbox,
+    .dmy,
+    #salary,
+    .textarea {
+        width: 100%;
+    }
+
+    .radio-images {
+        width: 50px;
+        height: 50px;
+    }
+
+    .form-cnt-buttons {
+        justify-content: center;
+    }
+
+    .btn {
+        width: 10vw;
+        height: 5vh;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    
+    .registration-form {
+        width: 80%;
+        padding: 5%;
+    }
+
+    .registration-form-title {
+        font-size: 1.3rem;
+    }
+
+.form-cnt-profile{
+    align-items: start;
+}
+    .form-cnt-profile-imgradio{
+    flex-direction: column;
+    }
+
+ 
+     .form-cnt-department-checkbox{
+        flex-direction: column;
+     }
+    
+
+    #form-cnt-name-textbox,
+    .dmy,
+    #salary,
+    .textarea {
+        width: 100%;
+    }
+
+    .radio-images {
+        width: 40px;
+        height: 40px;
+    }
+
+    .form-cnt-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+    .form-cnt-buttons-submitreset{
+        width: 100%;
+        margin-right: 7rem
+        
+        
+    }
+
+    #labelDepartment{
+        margin-left: 7rem;
+        margin-top: -4rem;
+    }
+    .form-cnt-department{
+        display: grid;
+    }
+    
 }

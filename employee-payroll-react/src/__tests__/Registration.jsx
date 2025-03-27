@@ -1,5 +1,11 @@
-import { fireEvent, render,screen } from "@testing-library/react";
+import { fireEvent, render,screen, waitFor } from "@testing-library/react";
 import Registration from "../pages/Registration/Registration";
+
+jest.mock("axios",()=>
+({
+    post: jest.fn(),
+    put: jest.fn(),
+}));
 
 describe("Employee Registration Testing",()=>{
 
@@ -8,23 +14,6 @@ describe("Employee Registration Testing",()=>{
         const element=screen.getByText(/Employee Payroll Form/i);
         expect(element).toBeInTheDocument();
     })   
-
-    
-    // test("allows user to enter name", () => {
-    //   render(<Registration />);
-    //   const nameInput = screen.getByText("Name:");
-    //   const userInput = `User_${Math.random().toString(36).substring(7)}`;
-    //   // fireEvent.change(nameInput, { target: { value: userInput } });
-    //   expect(nameInput.value).toBe(userInput);
-    // });
-    
-    
-      test("allows user to select a profile image", () => {
-        render(<Registration />);
-        const profileImage = screen.getByDisplayValue("img1");
-        fireEvent.click(profileImage);
-        expect(profileImage.checked).toBe(true);
-      });
     
       test("allows user to select gender", () => {
         render(<Registration />);
@@ -39,29 +28,7 @@ describe("Employee Registration Testing",()=>{
         fireEvent.click(hrCheckbox);
         expect(hrCheckbox.checked).toBe(true);
       });
-    
-
-      // test("allows user to select salary", () => {
-      //   render(<Registration />);
-      //   const salarySelect = screen.getByLabelText("Salary:");
-      //   fireEvent.change(salarySelect, { target: { value: "20,000" } });
-      //   expect(salarySelect.value).toBe("20,000");
-      // });
-    
-      // test("allows user to select start date", () => {
-      //   render(<Registration />);
-      //   const daySelect = screen.getByLabelText("Start Date:");
-      //   fireEvent.change(daySelect, { target: { value: "5" } });
-      //   expect(daySelect.value).toBe("5");
-      // });
-    
-      // test("allows user to enter notes", () => {
-      //   render(<Registration />);
-      //   const notesTextarea = screen.getByLabelText("Notes:");
-      //   fireEvent.change(notesTextarea, { target: { value: "This is a note." } });
-      //   expect(notesTextarea.value).toBe("This is a note.");
-      // });
-    
+  
       test("submits the form", () => {
         render(<Registration />);
         const submitButton = screen.getByText("Submit");
@@ -72,9 +39,38 @@ describe("Employee Registration Testing",()=>{
         render(<Registration />);
         const resetButton = screen.getByText("Reset");
         fireEvent.click(resetButton);
-    
     });
-    
 
+    test("validates required fields", () => {
+      render(<Registration />);
+      const submitButton = screen.getByText("Submit");
+      fireEvent.click(submitButton);
       
+      expect(screen.getByText("*Name is required.")).toBeInTheDocument();
+      expect(screen.getByText("*Please select a profile image.")).toBeInTheDocument();
+      expect(screen.getByText("*Please select a gender.")).toBeInTheDocument();
+      expect(screen.getByText("*Select at least one department.")).toBeInTheDocument();
+      expect(screen.getByText("*Please select a salary.")).toBeInTheDocument();
+      expect(screen.getByText("*Start date is required.")).toBeInTheDocument();
+    });
+
+    
+    test("allows user to enter a name", () => {
+      render(<Registration />);
+      const nameInput = screen.getByRole("textbox", { name: /name/i });
+      fireEvent.change(nameInput, { target: { value: "John Doe" } });
+      expect(nameInput.value).toBe("John Doe");
+    });
+
+    test("prevents submission if name is less than 3 characters", () => {
+      render(<Registration />);
+      const nameInput = screen.getByRole("textbox", { name: /name/i });
+      fireEvent.change(nameInput, { target: { value: "Jo" } });
+      
+      const submitButton = screen.getByText("Submit");
+      fireEvent.click(submitButton);
+      
+      expect(screen.getByText("*Name must be at least 3 characters.")).toBeInTheDocument();
+    });  
+    
 })

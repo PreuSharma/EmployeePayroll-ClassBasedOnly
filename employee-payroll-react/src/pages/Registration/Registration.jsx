@@ -1,283 +1,264 @@
 import React, { Component } from "react";
+import axios from "axios";
 import "../Registration/Registration.scss";
 import profileImg1 from "../../assets/img1.jpg";
-import profileImg2 from "../../assets/img2.jpg"; 
-import profileImg3 from "../../assets/img3.jpg"; 
-import profileImg4 from "../../assets/img4.jpg"; 
+import profileImg2 from "../../assets/img2.jpg";
+import profileImg3 from "../../assets/img3.jpg";
+import profileImg4 from "../../assets/img4.jpg";
+import toast, { Toaster } from "react-hot-toast";
 
-export class Registration extends Component {
+class Registration extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: null,
+      name: "",
+      profileImage: "",
+      gender: "",
+      departments: [],
+      salary: "",
+      startDate: "",
+      notes: "",
+      errors: {},
+    };
+  }
+
+  componentDidMount() {
+    const storedEmployee = localStorage.getItem("editEmployee");
+    if (storedEmployee) {
+      this.setState(JSON.parse(storedEmployee));
+    }
+  }
+
+
+
+  validateForm = () => {
+    let errors = {};
+    const { name, profileImage, gender, departments, salary, startDate, notes } = this.state;
+
+    if (!name.trim()) {
+      errors.name = "*Name is required.";
+    } else if (name.length < 3) {
+      errors.name = "*Name must be at least 3 characters.";
+    }
+
+    if (!profileImage) {
+      errors.profileImage = "*Please select a profile image.";
+    }
+
+    if (!gender) {
+      errors.gender = "*Please select a gender.";
+    }
+
+    if (departments.length === 0) {
+      errors.departments = "*Select at least one department.";
+    }
+
+    if (!salary) {
+      errors.salary = "*Please select a salary.";
+    }
+
+    if (!startDate) {
+      errors.startDate = "*Start date is required.";
+    }
+
+    if (notes.length > 200) {
+      errors.notes = "*Notes should not exceed 200 characters.";
+    }
+
+    this.setState({ errors });
+    return Object.keys(errors).length === 0; // Returns true if no errors
+  };
+
+
+
+
+  handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+
+    if (type === "checkbox") {
+      this.setState((prevState) => ({
+        departments: checked
+          ? [...prevState.departments, value]
+          : prevState.departments.filter((dept) => dept !== value),
+      }));
+    } else {
+      this.setState({ [name]: value });
+    }
+  };
+
+  handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!this.validateForm()) {
+      return;
+    }
+  
+    try {
+      const dataToSend = { ...this.state };
+      if (!this.state.id) {
+        delete dataToSend.id;
+      }
+      if (this.state.id) {
+        await axios.put(`http://localhost:3001/employees/${this.state.id}`, dataToSend);
+        toast.success("Employee updated successfully!");
+      } else {
+        const response = await axios.post("http://localhost:3001/employees", dataToSend);
+        toast.success("Employee added successfully!");
+        console.log(response.data);
+      }
+      localStorage.removeItem("editEmployee");
+      setTimeout(() => {
+        window.location.href = "/homePage/dashboard";
+      }, 1500); // Toast ke baad redirect delay karein
+    } catch (error) {
+      console.error("Error saving employee:", error);
+      toast.error("Failed to save employee details");
+    }
+  };
+  
+
+  handleReset = () => {
+    this.setState({
+      id: null,
+      name: "",
+      profileImage: "",
+      gender: "",
+      departments: [],
+      salary: "",
+      startDate: "",
+      notes: "",
+    });
+  };
+
   render() {
     return (
+      
       <div className="registration-container">
+        <Toaster position="top-right" reverseOrder={false} />
+        <div className="registration-form">
+          <div className="registration-form-title">Employee Payroll Form</div>
+          <main className="registration-form-cnt">
+            <form onSubmit={this.handleSubmit}>
+              <div className="form-cnt-name">
+                <label className="label" htmlFor="name">Name:</label>
+                <input
+                id="name"
+                className="form-cnt-name-textbox"
+                  type="text"
+                  name="name"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                
+                />
+              </div>
+              {this.state.errors.name && <span className="error-message">{this.state.errors.name}</span>}
 
 
-          <div className="registration-form">
-
-            <div className="registration-form-title">Employee Payroll Form</div>
-
-            <main className="registration-form-cnt">
-
-              <form>
-
-                <div className="form-cnt-name">
-                  <div><label className="label">Name:</label></div>
-                  <div><input type="text" id="form-cnt-name-textbox" required /></div>
-                </div>
-
-
-
-                <div class="form-cnt-profile">
-                  <div><label className="label">Profile Image:</label></div>
-
-                  <div className="form-cnt-profile-imgradio">
-
-                  <div class="form-cnt-profile-imgradio-1">
-                    <div class="radio-btn">
-                      <input type="radio" class="radioProfile" name="profileImage" value="img1"/>
-                    </div>
-
-                    <div>
-                      <img className="radio-images" src={profileImg1} alt="img1"/>
-                    </div>
-                  </div>
-
-                  <div class="form-cnt-profile-imgradio-2">
-                    <div class="radio-btn">
+              <div className="form-cnt-profile">
+                <label className="label" htmlFor="profileImg">Profile Image:</label>
+                <div className="form-cnt-profile-imgradio">
+                  <div className="profile-images-container">
+                  {[profileImg1, profileImg2, profileImg3, profileImg4].map((img, index) => (
+                    <label key={index} className="form-cnt-profile-imgradio-1">
                       <input
                         type="radio"
-                        class="radioProfile"
                         name="profileImage"
-                        value="img2"
+                        value={img}
+                        checked={this.state.profileImage === img}
+                        onChange={this.handleChange}
+                        
                       />
-                    </div>
-
-                    <div>
-                    <img className="radio-images" src={profileImg2} alt="img2"/>
-                    </div>
-                  </div>
-
-                  <div class="form-cnt-profile-imgradio-3">
-                    <div class="radio-btn">
-                      <input
-                        type="radio"
-                        class="radioProfile"
-                        name="profileImage"
-                        value="img3"
-                      />
-                    </div>
-
-                    <div>
-                    <img className="radio-images" src={profileImg3} alt="img3"/>
-                    </div>
-                  </div>
-
-                  <div class="form-cnt-profile-imgradio-4">
-                    <div class="radio-btn">
-                      <input
-                        type="radio"
-                        class="radioProfile"
-                        name="profileImage"
-                        value="img4"
-                      />
-                    </div>
-
-                    <div>
-                    <img className="radio-images" src={profileImg4} alt="img4"/>
-                    </div>
-                  </div>
+                      <img className="radio-images" src={img} alt={`img${index + 1}`} />
+                    </label>
+                  ))}
                 </div>
                 </div>
+              </div>
+              {this.state.errors.profileImage && <span className="error-message">{this.state.errors.profileImage}</span>}
 
 
 
-
-
-                <div class="form-cnt-gender">
+              <div className="form-cnt-gender">
+                <label className="label" htmlFor="gender">Gender:</label>
+                <label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    checked={this.state.gender === "male"}
+                    onChange={this.handleChange}
+                  />
+                  Male
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="female"
+                    checked={this.state.gender === "female"}
+                    onChange={this.handleChange}
                   
-
-                  <div><label className="label">Gender:</label></div>
-
-                  <div className="form-cnt-gender-radiolabels">
-
-                  <div class="form-cnt-gender-radiolabels-1">
-                   <div><input type="radio" name="gender" value="male" /></div>
-                    <div>Male</div>
-                  </div>
-
-                  <div class="form-cnt-gender-radiolabels-2">
-                    <div><input type="radio" name="gender" value="female" /></div>
-                    <div>Female</div>
-                  </div>
-
-                  </div>
+                  />
+                  Female
+                </label>
+              </div>
+              {this.state.errors.gender && <span className="error-message">{this.state.errors.gender}</span>}
 
 
+              <div className="form-cnt-department">
+                <label className="label" htmlFor="department">Department:</label>
+                {["HR", "Sales", "Finance", "Engineer", "Others"].map((dept) => (
+                  <label id="labelDepartment" key={dept}>
+                    <input
+                      type="checkbox"
+                      name="departments"
+                      value={dept}
+                      checked={this.state.departments.includes(dept)}
+                      onChange={this.handleChange}
+                    />
+                    {dept}
+                  </label>
+                ))}
+              </div>
+              {this.state.errors.departments && <span className="error-message">{this.state.errors.departments}</span>}
+
+
+              <div className="form-cnt-salary">
+                <label className="label" htmlFor="salary">Salary:</label>
+                <select id="salary" name="salary" value={this.state.salary} onChange={this.handleChange} >
+                  <option value="">Select Salary</option>
+                  {["10,000", "20,000", "30,000", "40,000"].map((sal) => (
+                    <option key={sal} value={sal}>
+                      {sal}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {this.state.errors.salary && <span className="error-message">{this.state.errors.salary}</span>}
+
+
+              <div className="form-cnt-salary-selectStartDate">
+                <label className="label" htmlFor="startDate">Start Date:</label>
+                <input id="startDate" className="dmy" type="date" name="startDate" value={this.state.startDate} onChange={this.handleChange}  />
+              </div>
+              {this.state.errors.startDate && <span className="error-message">{this.state.errors.startDate}</span>}
+
+
+              <div className="form-cnt-notes">
+                <label className="label" htmlFor="notes">Notes:</label>
+                <textarea id="notes" className="textarea" name="notes" value={this.state.notes} onChange={this.handleChange}></textarea>
+                
+              </div>
+
+              <div className="form-cnt-buttons">
+                <button type="button" id="cancelBtn" className="btn" onClick={() => (window.location.href = "/homePage/dashboard")}>Cancel</button>
+                <div className="form-cnt-buttons-submitreset"><button type="submit" id="submitBtn" className="btn">{this.state.id ? "Update" : "Submit"}</button>
+                <button type="reset" id="resetBtn" className="btn" onClick={this.handleReset}>Reset</button>
                 </div>
-
-
-
-
-
-                <div class="form-cnt-department">
-
-                  <label className="label">Department:</label>
-
-                  <div className="form-cnt-department-checkbox">
-
-                  <div class="form-cnt-department-checkbox-1">
-                    <div><input type="checkbox" name="departments" value="HR" /></div>
-                    <div>HR</div>
-                  </div>
-                  <div class="form-cnt-department-checkbox-2">
-                    <div><input type="checkbox" name="departments" value="Sales" /></div>
-                    <div>Sales</div>
-                  </div>
-                  <div class="form-cnt-department-checkbox-3">
-                    <div><input type="checkbox" name="departments" value="Finance" /></div>
-                    <div>Finance</div>
-                  </div>
-                  <div class="form-cnt-department-checkbox-4">
-                    <div><input type="checkbox" name="departments" value="Engineer" /></div>
-                    <div>Engineer</div>
-                  </div>
-                  <div class="form-cnt-department-checkbox-5">
-                    <div><input type="checkbox" name="departments" value="Others" /></div>
-                    <div>Others</div>
-                  </div>
-                  </div>
-                </div>
-
-
-
-
-                <div class="form-cnt-salary">
-                  <div><label className="label">Salary:</label></div>
-                  
-                  <div class="form-cnt-salary-selectSalary">
-                    <select id="salary">
-                      <option className="options">Select Salary</option>
-                      <option value="10,000">10,000</option>
-                      <option value="20,000">20,000</option>
-                      <option value="30,000">30,000</option>
-                      <option value="40,000">40,000</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-cnt-salary-selectStartDate">
-                  <div><label className="label">Start Date:</label></div>
-
-                  <div className="form-cnt-salary-selectStartDate-dmy">
-                  <div class="startDate">
-                    <select id="startDay" className="dmy">
-                      <option>Date</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
-                      <option>11</option>
-                      <option>12</option>
-                      <option>13</option>
-                      <option>14</option>
-                      <option>15</option>
-                      <option>16</option>
-                      <option>17</option>
-                      <option>18</option>
-                      <option>19</option>
-                      <option>20</option>
-                      <option>21</option>
-                      <option>22</option>
-                      <option>23</option>
-                      <option>24</option>
-                      <option>25</option>
-                      <option>26</option>
-                      <option>27</option>
-                      <option>28</option>
-                      <option>29</option>
-                      <option>30</option>
-                      <option>31</option>
-                    </select>
-                  </div>
-
-                  <div class="startMonth">
-                    <select id="startMonth" className="dmy">
-                      <option>Month</option>
-                      <option>January</option>
-                      <option>February</option>
-                      <option>March</option>
-                      <option>April</option>
-                      <option>May</option>
-                      <option>June</option>
-                      <option>July</option>
-                      <option>August</option>
-                      <option>September</option>
-                      <option>October</option>
-                      <option>November</option>
-                      <option>December</option>
-                    </select>
-                  </div>
-
-                  <div class="startYear">
-                    <select id="startYear" className="dmy">
-                      <option>Year</option>
-                      <option>2016</option>
-                      <option>2017</option>
-                      <option>2018</option>
-                      <option>2019</option>
-                      <option>2020</option>
-                      <option>2021</option>
-                      <option>2022</option>
-                      <option>2023</option>
-                      <option>2024</option>
-                      <option>2025</option>
-                    </select>
-                  </div>
-                  </div>
-                </div>
-
-
-
-
-
-                <div class="form-cnt-notes">
-                  <div><label className="label">Notes:</label></div>
-                  
-                  <div class="form-cnt-notesTextArea">
-                    <textarea  class="textarea" id="notes"/>
-                  </div>
-                </div>
-
-
-                <div class="form-cnt-buttons">
-
-                  <div class="form-cnt-buttons-cancel">
-                    <button class="btn" type="button">Cancel</button>
-                  </div>
-
-                  <div className="form-cnt-buttons-submitreset">
-                    <div class="form-cnt-buttons-submit">
-                      <button class="btn" type="submit">Submit</button>
-                    </div>
-                    <div class="form-cnt-buttons-reset">
-                      <button class="btn" type="reset">Reset</button>
-                    </div>
-                  </div>
-
-                </div>
-
-
-              </form>
-            </main>
-          </div>
-        
-
-
+              </div>
+            </form>
+          </main>
+        </div>
       </div>
     );
   }

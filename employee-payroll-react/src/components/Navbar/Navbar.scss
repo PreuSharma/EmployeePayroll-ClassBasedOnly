@@ -13,8 +13,67 @@
 .navbar-employee-payroll {
     margin-left: 0.5rem;
     color: #82A70C;
-    font: normal normal bold 16px/19px Montserrat;
+    font: normal normal bold 16px/19px sans-serif;
 }
 .navbar-brPayroll {
     color: #42515F;
 }
+
+
+
+.navbar-user {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  
+    .user-icon {
+      font-size: 30px;
+      color: #333;
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: #007bff;
+      }
+    }
+  
+    .navbar-user-dropdown {
+      position: relative;
+    }
+  
+    .dropdown-menu {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      width: 220px;
+      display: flex;
+      flex-direction: column;
+      padding: 8px 0;
+      z-index: 10;
+    }
+  
+    .dropdown-item {
+      padding: 10px 15px;
+      font-size: 14px;
+      color: #333;
+      transition: background 0.3s ease;
+  
+      &:hover {
+        background: #f1f1f1;
+      }
+    }
+  
+    .logout {
+      color: red;
+      font-weight: bold;
+  
+      &:hover {
+        background: rgba(255, 0, 0, 0.1);
+      }
+    }
+  }
+  
