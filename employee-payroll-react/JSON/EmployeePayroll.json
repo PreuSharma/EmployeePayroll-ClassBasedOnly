@@ -34,13 +34,30 @@
         "HR",
         "Engineer",
         "Finance",
-        "Sales",
-        "Others"
+        "Sales"
       ],
       "salary": "10,000",
       "startDate": "2025-03-14",
-      "notes": "bvbnm,",
+      "notes": "Others",
       "errors": {}
+    },
+    {
+      "id": "dc72",
+      "name": "aman Gupta",
+      "profileImage": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAYGBgYHBgcICAcKCwoLCg8ODAwODxYQERAREBYiFRkVFRkVIh4kHhweJB42KiYmKjY+NDI0PkxERExfWl98fKcBBgYGBgcGBwgIBwoLCgsKDw4MDA4PFhAREBEQFiIVGRUVGRUiHiQeHB4kHjYqJiYqNj40MjQ+TERETF9aX3x8p//CABEIAC0ALQMBIgACEQEDEQH/xAAvAAADAQEBAQAAAAAAAAAAAAAEBQYDAgEHAQEBAQEAAAAAAAAAAAAAAAADAgEA/9oADAMBAAIQAxAAAAKZsOjM0AAjwmWpbBMg3So8LtUZack27pb0hK6n5q2qGgeyqEoZjPK4/8QAAv/aAAwDAQACAAMAAAAhyYDG5W2LI//EAAL/2gAMAwEAAgADAAAAEBC+ia7O4ZP/xAAfEQACAgEEAwAAAAAAAAAAAAABAgARAwQSE1EUIUH/2gAIAQIBAT8AdtiM3U8zNZNCYcnJjDTUXwvQirk3ueOaRWCG+/UIsGFCG2iyfgmJCiAE2Z//xAAfEQABBAIDAQEAAAAAAAAAAAABAAIDERITBCExFFH/2gAIAQMBAT8AjYXva39K+CDGrNqeLVIWri472WaCcYsGDb4ua9jpBj7XaBIIK23GHGgD6a7Urw+QuAoL/8QAKxAAAQMCBAUEAgMAAAAAAAAAAQIDBAASBREhURMiMUFhEDJScRQzNJGx/9oACAEBAAE/AmWXH3EttpzUaiYHFYTe/wA6u/xFOz7eWJHSB8sqVIUv+REbWN8sj/YqThiS0X4hKkD3IPuT6YDDDUbjEc7n+ViK8mkp3NITmKWMqw9VsxIHRYINYzDEaXyjkXqKaQENoSOyQKxU/qFMuO6/VK4h65knz0qISJLJ81NiIk8O4DlzqG8HorLg7pFYobQ0r7pt5WuTd1fk2m0isMbDrpX8Kxmf+MtlKepBJrA8RDKuA6eRR0OxqWwJDCkd+33TUl1gWZajqKkOlxXmoEgRWnFL9g6nzsKlyVyX1uq79th6Q8ZlxhbnejY1JcRLtdssJTvSnuEdE6704845lcrQdB6f/8QAJBABAAIBBAICAgMAAAAAAAAAAQARITFBUWEQcYGhkbHR8PH/2gAIAQEAAT8heg3BMJSLtBGk+NH8EwP+WeH9Ps11PA/fI8bYxHd8Rkvwl/UCC4mxHXxyTQeI+Co2Ed12hw1ZkW38RVPEIF0Fwp7xMs2hfdTmU3vRmPsWIseYYbqZGW/U2i0x2xSVkHW0XVbT6fxs94D6RsK4LKphfd67zB+F8uzumo+8cDQ8Aai02/TECeRq1/UvC7kZX2fQF+P/xAAfEAEAAgICAwEBAAAAAAAAAAABABEhMUFREHGBYZH/2gAIAQEAAT8QoPGP+qroIPWmjqYKSogX11LJ7cgBBfJR8aAR1djjTXI3sTlBCCUzRcr7DHM6n6epkcB8aAhHjstguyGyWdAswK7RVd00Zg6pKYDCL1PhQVl6G9+SU/Ehs2D/AKDBaBwBVhWPoS2/TyRF0XDvaEyjJ6qsEn8vNqBtOCPz6JeBinHbsZkI3l2lHwqtn9DmHrbrMAfCfBVvmY7OJ12rwlHadqB2K8XOQ7eXx//Z",
+      "gender": "female",
+      "departments": [
+        "Sales",
+        "Finance",
+        "Engineer"
+      ],
+      "salary": "10,000",
+      "startDate": "2025-03-05",
+      "notes": "kjhn",
+      "errors": {
+        "salary": "*Please select a salary.",
+        "startDate": "*Start date is required."
+      }
     }
   ]
 }

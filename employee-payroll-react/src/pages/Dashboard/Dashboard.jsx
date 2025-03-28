@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import $ from "jquery"; // Import jQuery
+import $ from "jquery"; 
 import "../Dashboard/Dashboard.scss";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import toast, { Toaster } from "react-hot-toast";
 import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css"; // Default CSS
+import "react-confirm-alert/src/react-confirm-alert.css"; 
+import { withRouter } from "../../routes/withRouter";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -22,9 +23,15 @@ class Dashboard extends Component {
 
   fetchEmployees = () => {
     $.get("http://localhost:3001/employees", (data) => {
-      this.setState({ employees: data.reverse() });
+      if (Array.isArray(data)) {
+        this.setState({ employees: [...data].reverse() }); 
+      } else {
+        console.error("Unexpected response:", data);
+        this.setState({ employees: [] }); 
+      }
     });
   };
+  
 
   handleSearch = (event) => {
     const query = event.target.value.toLowerCase();
@@ -43,7 +50,8 @@ class Dashboard extends Component {
 
   handleEdit = (employee) => {
     localStorage.setItem("editEmployee", JSON.stringify(employee)); 
-    window.location.href = "/homePage/registration"; 
+    this.props.navigate("/homePage/registration"); 
+
   };
 
   handleDelete = (id) => {
@@ -152,6 +160,7 @@ class Dashboard extends Component {
                     <td>
                       <button
                         className="edit-btn"
+                        aria-label="Edit"
                         onClick={() => this.handleEdit(employee)}
                       >
                         <i className="fas fa-edit"></i>
@@ -177,4 +186,4 @@ class Dashboard extends Component {
     );
   }
 }
-export default Dashboard;
+export default withRouter(Dashboard);

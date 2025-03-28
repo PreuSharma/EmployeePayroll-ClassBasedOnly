@@ -42,7 +42,7 @@ describe("Navbar Component Testing", () => {
     localStorage.setItem("user", JSON.stringify({ name: "John", email: "john@example.com" }));
     render(<Navbar />);
 
-    fireEvent.click(screen.getByRole("img", { hidden: true })); // Click user icon
+    fireEvent.click(screen.getByRole("img", { hidden: true })); 
 
     expect(localStorage.getItem("user")).not.toBeNull();
   });

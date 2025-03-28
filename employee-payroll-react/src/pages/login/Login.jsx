@@ -4,6 +4,8 @@ import { jwtDecode } from "jwt-decode";
 import "../login/Login.scss"; 
 import toast, { Toaster } from "react-hot-toast";
 import Navbar from "../../components/Navbar/Navbar";
+import { withRouter } from "../../routes/withRouter";
+
 
 const clientId = "618248214889-qd4nlr31ko28ghslq5pi17986ihtvaav.apps.googleusercontent.com";
 
@@ -23,7 +25,7 @@ class Login extends Component {
       name: decode.name,
       email: decode.email
   };
-  // Store only name and email in localStorage
+
   localStorage.setItem("user", JSON.stringify(userData));
 
     toast.success("Login Successful!");
@@ -38,13 +40,13 @@ class Login extends Component {
 
   render() {
     if (this.state.redirect) {
-      window.location.href = "/homePage/dashboard";
+      this.props.navigate("/homePage/dashboard"); 
       return null;
     }
 
     return (
       <GoogleOAuthProvider clientId={clientId}>
-        {/* <Navbar user={this.state.user} /> */}
+
         {this.state.user && <Navbar user={this.state.user} />}
         <div className="login-container">
           <h2>SSO Login with Google</h2>
@@ -58,4 +60,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

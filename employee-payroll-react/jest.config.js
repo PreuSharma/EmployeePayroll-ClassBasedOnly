@@ -6,5 +6,10 @@ module.exports = {
     transform: {
       "^.+\\.jsx?$": "babel-jest",
     },
+    "moduleNameMapper": {
+      "^react-router-dom$": "<rootDir>/src/__mocks__/react-router-dom.js",
+      "^react-oauth/google$": "<rootDir>/src/__mocks__/reactOAuthMock.js"
+    }
+    
   };
   

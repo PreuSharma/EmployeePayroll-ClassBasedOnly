@@ -6,6 +6,8 @@ import profileImg2 from "../../assets/img2.jpg";
 import profileImg3 from "../../assets/img3.jpg";
 import profileImg4 from "../../assets/img4.jpg";
 import toast, { Toaster } from "react-hot-toast";
+import { withRouter } from "../../routes/withRouter";
+
 
 class Registration extends Component {
   constructor(props) {
@@ -67,7 +69,7 @@ class Registration extends Component {
     }
 
     this.setState({ errors });
-    return Object.keys(errors).length === 0; // Returns true if no errors
+    return Object.keys(errors).length === 0; 
   };
 
 
@@ -75,7 +77,6 @@ class Registration extends Component {
 
   handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-
     if (type === "checkbox") {
       this.setState((prevState) => ({
         departments: checked
@@ -84,16 +85,19 @@ class Registration extends Component {
       }));
     } else {
       this.setState({ [name]: value });
+      if (name === "notes") {
+        const textarea = document.getElementById("notes");
+        textarea.style.height = "auto"; // Reset height
+        textarea.style.height = textarea.scrollHeight + "px";
+      }
     }
 
 
-    this.setState({ notes: e.target.value });
-    e.target.style.height = "auto"; 
-    e.target.style.height = e.target.scrollHeight + "px"; 
   };
 
   handleSubmit = async (e) => {
     e.preventDefault();
+    
     if (!this.validateForm()) {
       return;
     }
@@ -113,8 +117,9 @@ class Registration extends Component {
       }
       localStorage.removeItem("editEmployee");
       setTimeout(() => {
-        window.location.href = "/homePage/dashboard";
-      }, 1500); // Toast ke baad redirect delay karein
+      this.props.navigate("/homePage/dashboard"); 
+
+      }, 1500); 
     } catch (error) {
       console.error("Error saving employee:", error);
       toast.error("Failed to save employee details");
@@ -252,11 +257,14 @@ class Registration extends Component {
               <div className="form-cnt-notes">
                 <label className="label" htmlFor="notes">Notes:</label>
                 <textarea id="notes" className="textarea" name="notes" value={this.state.notes} onChange={this.handleChange}></textarea>
-                
               </div>
+              {this.state.notes.length > 200 && (
+    <span className="error-message">*Notes should not exceed 200 characters.</span>
+  )}
+              
 
               <div className="form-cnt-buttons">
-                <button type="button" id="cancelBtn" className="btn" onClick={() => (window.location.href = "/homePage/dashboard")}>Cancel</button>
+                <button type="button" id="cancelBtn" className="btn" onClick={() =>(this.props.navigate("/homePage/dashboard"))}>Cancel</button>
                 <div className="form-cnt-buttons-submitreset"><button type="submit" id="submitBtn" className="btn">{this.state.id ? "Update" : "Submit"}</button>
                 <button type="reset" id="resetBtn" className="btn" onClick={this.handleReset}>Reset</button>
                 </div>
@@ -269,4 +277,4 @@ class Registration extends Component {
   }
 }
 
-export default Registration;
+export default withRouter(Registration);

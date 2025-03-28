@@ -1,5 +1,7 @@
-import { fireEvent, render,screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Registration from "../pages/Registration/Registration";
+
+
 
 jest.mock("axios",()=>
 ({
@@ -7,8 +9,12 @@ jest.mock("axios",()=>
     put: jest.fn(),
 }));
 
-describe("Employee Registration Testing",()=>{
 
+
+describe("Employee Registration Testing",()=>{
+  beforeEach(() => {
+    jest.clearAllMocks(); 
+  });
     test('employee payroll form title', () => {
         render(<Registration/>);
         const element=screen.getByText(/Employee Payroll Form/i);
@@ -74,3 +80,4 @@ describe("Employee Registration Testing",()=>{
     });  
     
 })
+
