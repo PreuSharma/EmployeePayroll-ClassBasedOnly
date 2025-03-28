@@ -113,7 +113,6 @@ class Registration extends Component {
       } else {
         const response = await axios.post("http://localhost:3001/employees", dataToSend);
         toast.success("Employee added successfully!");
-        console.log(response.data);
       }
       localStorage.removeItem("editEmployee");
       setTimeout(() => {
@@ -121,7 +120,6 @@ class Registration extends Component {
 
       }, 1500); 
     } catch (error) {
-      console.error("Error saving employee:", error);
       toast.error("Failed to save employee details");
     }
   };

@@ -19,7 +19,6 @@ class Login extends Component {
 
   handleSuccess = (response) => {
     const decode = jwtDecode(response.credential);
-    console.log("Login Success:", decode);
 
     const userData = {
       name: decode.name,
@@ -35,7 +34,7 @@ class Login extends Component {
   };
 
   handleError = () => {
-    console.log("Login Failed");
+    toast.error("Login Failed");
   };
 
   render() {
