@@ -1,0 +1,827 @@
+[INFO]  Bootstrapper: Retrieving info from "package.json" file
+[DEBUG] Bootstrapper: Setting the log level to DEBUG due to verbose mode
+[DEBUG] Bootstrapper: Properties: {
+  'sonar.userHome': 'C:\\Users\\preus\\.sonar',
+  'sonar.working.directory': '.scannerwork',
+  'sonar.scanner.os': 'win32',
+  'sonar.scanner.arch': 'x64',
+  'sonar.exclusions': '**/node_modules/**,**/build/**,**/__tests__/**,**/coverage/**,**/public/**,**/*.test.js,**/*.spec.js,**/App.js,**/index.js,**/reportWebVitals.js,**/routes/RoutingModule.jsx,**/setupTests.js,**/__mocks__/**,**/routes/withRouter.jsx,**/components/HomePage/HomePage.jsx',
+  'sonar.projectKey': 'my-react-app',
+  'sonar.projectName': 'employee-payroll-react',
+  'sonar.projectVersion': '0.1.0',
+  'sonar.javascript.lcov.reportPaths': 'coverage/lcov.info',
+  'sonar.organization': 'my-organization',
+  'sonar.host.url': 'http://localhost:9000',
+  'sonar.token': 'sqa_b33b7d5a8ee84e10e9f3b09223dbb239596f0baf',
+  'sonar.sources': 'src',
+  'sonar.language': 'js',
+  'sonar.sourceEncoding': 'UTF-8',
+  'sonar.tests': 'src',
+  'sonar.test.inclusions': '**/__tests__/**, **/*.test.js, **/*.spec.js',
+  'sonar.scm.provider': 'git',
+  'sonar.scm.disabled': 'true',
+  'sonar.verbose': 'true',
+  'sonar.scanner.internal.isSonarCloud': 'false',
+  'sonar.scanner.apiBaseUrl': 'http://localhost:9000/api/v2',
+  'sonar.scanner.app': 'ScannerNpm',
+  'sonar.scanner.appVersion': '4.2.8',
+  'sonar.scanner.bootstrapStartTime': '1743225884159',
+  'sonar.scanner.wasJreCacheHit': 'disabled',
+  'sonar.scanner.wasEngineCacheHit': 'false',
+  'sonar.projectBaseDir': 'D:\\ReactF_EmployeePayroll\\employee-payroll-react'
+}
+[INFO]  Bootstrapper: Platform: win32 x64
+[DEBUG] Bootstrapper: Detecting proxy: No proxy detected
+[INFO]  Bootstrapper: Server URL: http://localhost:9000
+[INFO]  Bootstrapper: Version: 4.2.8
+[DEBUG] Bootstrapper: Check if Server supports JRE provisioning
+[DEBUG] Bootstrapper: Detecting SonarQube server version
+[DEBUG] Bootstrapper: Fetching API V2 /analysis/version
+[INFO]  Bootstrapper: SonarQube server version: 25.3.0
+[DEBUG] Bootstrapper: SonarQube Server v25.3.0 supports JRE provisioning: true
+[INFO]  Bootstrapper: JRE provisioning is supported
+[DEBUG] Bootstrapper: Detecting latest version of JRE
+[DEBUG] Bootstrapper: Downloading JRE information for win32 x64 from /analysis/jres
+[DEBUG] Bootstrapper: Latest Supported JRE:  {
+  id: 'c5fceadc-0f9d-4d05-995e-ef3d3a1f8467',
+  filename: 'OpenJDK17U-jre_x64_windows_hotspot_17.0.13_11.zip',
+  sha256: '11a61a94d383e755b08b4e5890a13d148bc9f95b7149cbbeec62efb8c75a4a67',
+  javaPath: 'jdk-17.0.13+11-jre/bin/java.exe',
+  os: 'windows',
+  arch: 'x64'
+}
+[DEBUG] Bootstrapper: Looking for Cached JRE
+[DEBUG] Bootstrapper: JRE version found in cache: OpenJDK17U-jre_x64_windows_hotspot_17.0.13_11.zip
+[DEBUG] Bootstrapper: Verifying checksum 11a61a94d383e755b08b4e5890a13d148bc9f95b7149cbbeec62efb8c75a4a67
+[DEBUG] Bootstrapper: Checksum Value: 11a61a94d383e755b08b4e5890a13d148bc9f95b7149cbbeec62efb8c75a4a67
+[INFO]  Bootstrapper: Using JRE from the cache
+[DEBUG] Bootstrapper: Detecting latest version of SonarScanner Engine
+[DEBUG] Bootstrapper: Latest SonarScanner Engine version: sonar-scanner-engine-shaded-25.3.0.104237-all.jar
+[DEBUG] Bootstrapper: Looking for Cached SonarScanner Engine
+[DEBUG] Bootstrapper: SonarScanner Engine version found in cache: sonar-scanner-engine-shaded-25.3.0.104237-all.jar
+[DEBUG] Bootstrapper: Verifying checksum 974654bf1854293ca584007b9bcef3f439df69713b65825137437190dbe16769
+[DEBUG] Bootstrapper: Checksum Value: 974654bf1854293ca584007b9bcef3f439df69713b65825137437190dbe16769
+[DEBUG] Bootstrapper: Using SonarScanner Engine from the cache
+[DEBUG] Bootstrapper: Running the SonarScanner Engine
+[DEBUG] Bootstrapper: Detecting proxy: No proxy detected
+[DEBUG] Bootstrapper: Running SonarScanner Engine C:\Users\preus\.sonar\cache\11a61a94d383e755b08b4e5890a13d148bc9f95b7149cbbeec62efb8c75a4a67\OpenJDK17U-jre_x64_windows_hotspot_17.0.13_11.zip_unzip\jdk-17.0.13+11-jre\bin\java.exe -jar C:\Users\preus\.sonar\cache\974654bf1854293ca584007b9bcef3f439df69713b65825137437190dbe16769\sonar-scanner-engine-shaded-25.3.0.104237-all.jar
+[DEBUG] Bootstrapper: Writing properties to SonarScanner Engine {"scannerProperties":[{"key":"sonar.userHome","value":"C:\\Users\\preus\\.sonar"},{"key":"sonar.working.directory","value":".scannerwork"},{"key":"sonar.scanner.os","value":"win32"},{"key":"sonar.scanner.arch","value":"x64"},{"key":"sonar.exclusions","value":"**/node_modules/**,**/build/**,**/__tests__/**,**/coverage/**,**/public/**,**/*.test.js,**/*.spec.js,**/App.js,**/index.js,**/reportWebVitals.js,**/routes/RoutingModule.jsx,**/setupTests.js,**/__mocks__/**,**/routes/withRouter.jsx,**/components/HomePage/HomePage.jsx"},{"key":"sonar.projectKey","value":"my-react-app"},{"key":"sonar.projectName","value":"employee-payroll-react"},{"key":"sonar.projectVersion","value":"0.1.0"},{"key":"sonar.javascript.lcov.reportPaths","value":"coverage/lcov.info"},{"key":"sonar.organization","value":"my-organization"},{"key":"sonar.host.url","value":"http://localhost:9000"},{"key":"sonar.token","value":"sqa_b33b7d5a8ee84e10e9f3b09223dbb239596f0baf"},{"key":"sonar.sources","value":"src"},{"key":"sonar.language","value":"js"},{"key":"sonar.sourceEncoding","value":"UTF-8"},{"key":"sonar.tests","value":"src"},{"key":"sonar.test.inclusions","value":"**/__tests__/**, **/*.test.js, **/*.spec.js"},{"key":"sonar.scm.provider","value":"git"},{"key":"sonar.scm.disabled","value":"true"},{"key":"sonar.verbose","value":"true"},{"key":"sonar.scanner.internal.isSonarCloud","value":"false"},{"key":"sonar.scanner.apiBaseUrl","value":"http://localhost:9000/api/v2"},{"key":"sonar.scanner.app","value":"ScannerNpm"},{"key":"sonar.scanner.appVersion","value":"4.2.8"},{"key":"sonar.scanner.bootstrapStartTime","value":"1743225884159"},{"key":"sonar.scanner.wasJreCacheHit","value":"hit"},{"key":"sonar.scanner.wasEngineCacheHit","value":"true"},{"key":"sonar.projectBaseDir","value":"D:\\ReactF_EmployeePayroll\\employee-payroll-react"}]}
+[INFO]  ScannerEngine: Starting SonarScanner Engine...
+[INFO]  ScannerEngine: Java 17.0.13 Eclipse Adoptium (64-bit)
+[DEBUG] ScannerEngine: JVM max available memory: 3 GB
+[DEBUG] ScannerEngine: Community 25.3.0.104237
+[DEBUG] ScannerEngine: Sonar User Home: C:\Users\preus\.sonar
+[DEBUG] ScannerEngine: Loading OS trusted SSL certificates...
+[DEBUG] ScannerEngine: This operation might be slow or even get stuck. You can skip it by passing the scanner property 'sonar.scanner.skipSystemTruststore=true'
+[DEBUG] ScannerEngine: Successfully loaded KeyStore of the type [Windows-ROOT] having [64] entries
+[DEBUG] ScannerEngine: Failed to load KeyStore of the type [Windows-ROOT-LOCALMACHINE]
+[DEBUG] ScannerEngine: Successfully loaded KeyStore of the type [Windows-ROOT-CURRENTUSER] having [64] entries
+[DEBUG] ScannerEngine: Successfully loaded KeyStore of the type [Windows-MY] having [8] entries
+[DEBUG] ScannerEngine: Successfully loaded KeyStore of the type [Windows-MY-CURRENTUSER] having [8] entries
+[DEBUG] ScannerEngine: Failed to load KeyStore of the type [Windows-MY-LOCALMACHINE]
+[DEBUG] ScannerEngine: Loaded [144] system trusted certificates
+[INFO]  ScannerEngine: Load global settings
+[DEBUG] ScannerEngine: --> GET http://localhost:9000/api/settings/values.protobuf
+[DEBUG] ScannerEngine: <-- 200 http://localhost:9000/api/settings/values.protobuf (33ms, 6793-byte body)
+[INFO]  ScannerEngine: Load global settings (done) | time=86ms
+[INFO]  ScannerEngine: Server id: 147B411E-AZW8YgHkExhFBiuSqD4S
+[DEBUG] ScannerEngine: User cache: C:\Users\preus\.sonar\cache
+[INFO]  ScannerEngine: Loading required plugins
+[INFO]  ScannerEngine: Load plugins index
+[DEBUG] ScannerEngine: --> GET http://localhost:9000/api/plugins/installed
+[DEBUG] ScannerEngine: <-- 200 http://localhost:9000/api/plugins/installed (4ms, unknown-length body)
+[INFO]  ScannerEngine: Load plugins index (done) | time=9ms
+[INFO]  ScannerEngine: Load/download plugins
+[INFO]  ScannerEngine: Load/download plugins (done) | time=31ms
+[DEBUG] ScannerEngine: Plugins not loaded because they are optional: [csharp, flex, go, web, javasymbolicexecution, java, javascript, kotlin, php, python, ruby, sonarscala, vbnet, xml]
+[DEBUG] ScannerEngine: Plugins loaded:
+[DEBUG] ScannerEngine:   * JaCoCo 1.3.0.1538 (jacoco)
+[DEBUG] ScannerEngine:   * IaC Code Quality and Security 1.43.0.14517 (iac)
+[DEBUG] ScannerEngine:   * Text Code Quality and Security 2.21.0.5225 (text)
+[DEBUG] ScannerEngine:   * Clean as You Code 2.4.0.2018 (cayc)
+[DEBUG] ScannerEngine: register org.eclipse.jgit.util.FS$FileStoreAttributes$$Lambda$362/0x0000013fb726fac8@3ff57625 with shutdown hook
+[INFO]  ScannerEngine: Process project properties
+[INFO]  ScannerEngine: Process project properties (done) | time=14ms
+[INFO]  ScannerEngine: Project key: my-react-app
+[INFO]  ScannerEngine: Base dir: D:\ReactF_EmployeePayroll\employee-payroll-react
+[INFO]  ScannerEngine: Working dir: D:\ReactF_EmployeePayroll\employee-payroll-react\.scannerwork
+[DEBUG] ScannerEngine: Project global encoding: UTF-8, default locale: en_IN
+[INFO]  ScannerEngine: Load project settings for component key: 'my-react-app'
+[DEBUG] ScannerEngine: --> GET http://localhost:9000/api/settings/values.protobuf?component=my-react-app
+[DEBUG] ScannerEngine: <-- 200 http://localhost:9000/api/settings/values.protobuf?component=my-react-app (10ms, 6803-byte body)
+[INFO]  ScannerEngine: Load project settings for component key: 'my-react-app' (done) | time=15ms
+[DEBUG] ScannerEngine: Creating module hierarchy
+[DEBUG] ScannerEngine:   Init module 'employee-payroll-react'
+[DEBUG] ScannerEngine:     Base dir: D:\ReactF_EmployeePayroll\employee-payroll-react
+[DEBUG] ScannerEngine:     Working dir: D:\ReactF_EmployeePayroll\employee-payroll-react\.scannerwork
+[DEBUG] ScannerEngine:     Module global encoding: UTF-8, default locale: en_IN
+[INFO]  ScannerEngine: Load quality profiles
+[DEBUG] ScannerEngine: --> GET http://localhost:9000/api/qualityprofiles/search.protobuf?project=my-react-app
+[DEBUG] ScannerEngine: <-- 200 http://localhost:9000/api/qualityprofiles/search.protobuf?project=my-react-app (42ms, 3104-byte body)
+[INFO]  ScannerEngine: Load quality profiles (done) | time=62ms
+[DEBUG] ScannerEngine: SCM Step is disabled by configuration
+[INFO]  ScannerEngine: Load active rules
+[DEBUG] ScannerEngine: --> GET http://localhost:9000/api/v2/analysis/active_rules?projectKey=my-react-app
+[DEBUG] ScannerEngine: <-- 200 http://localhost:9000/api/v2/analysis/active_rules?projectKey=my-react-app (252ms, unknown-length body)
+[INFO]  ScannerEngine: Load active rules (done) | time=378ms
+[INFO]  ScannerEngine: Load analysis cache
+[DEBUG] ScannerEngine: --> GET http://localhost:9000/api/analysis_cache/get?project=my-react-app
+[DEBUG] ScannerEngine: <-- 200 http://localhost:9000/api/analysis_cache/get?project=my-react-app (3ms, unknown-length body)
+[INFO]  ScannerEngine: Load analysis cache | time=14ms
+[DEBUG] ScannerEngine: --> GET http://localhost:9000/api/languages/list
+[DEBUG] ScannerEngine: <-- 200 http://localhost:9000/api/languages/list (2ms, unknown-length body)
+[DEBUG] ScannerEngine: --> GET http://localhost:9000/api/features/list
+[DEBUG] ScannerEngine: <-- 200 http://localhost:9000/api/features/list (2ms, unknown-length body)
+[DEBUG] ScannerEngine: Declared patterns of language Kubernetes were converted to sonar.lang.patterns.kubernetes : 
+[DEBUG] ScannerEngine: Declared patterns of language CSS were converted to sonar.lang.patterns.css : **/*.css,**/*.less,**/*.scss,**/*.sass
+[DEBUG] ScannerEngine: Declared patterns of language Scala were converted to sonar.lang.patterns.scala : **/*.scala
+[DEBUG] ScannerEngine: Declared patterns of language JSP were converted to sonar.lang.patterns.jsp : **/*.jsp,**/*.jspf,**/*.jspx
+[DEBUG] ScannerEngine: Declared patterns of language JavaScript were converted to sonar.lang.patterns.js : **/*.js,**/*.jsx,**/*.cjs,**/*.mjs,**/*.vue
+[DEBUG] ScannerEngine: Declared patterns of language Python were converted to sonar.lang.patterns.py : **/*.py
+[DEBUG] ScannerEngine: Declared patterns of language Docker were converted to sonar.lang.patterns.docker : **/Dockerfile,**/*.dockerfile
+[DEBUG] ScannerEngine: Declared patterns of language Java were converted to sonar.lang.patterns.java : **/*.java,**/*.jav
+[DEBUG] ScannerEngine: Declared patterns of language HTML were converted to sonar.lang.patterns.web : **/*.html,**/*.xhtml,**/*.cshtml,**/*.vbhtml,**/*.aspx,**/*.ascx,**/*.rhtml,**/*.erb,**/*.shtm,**/*.shtml,**/*.cmp,**/*.twig
+[DEBUG] ScannerEngine: Declared patterns of language Flex were converted to sonar.lang.patterns.flex : **/*.as
+[DEBUG] ScannerEngine: Declared patterns of language XML were converted to sonar.lang.patterns.xml : **/*.xml,**/*.xsd,**/*.xsl,**/*.config
+[DEBUG] ScannerEngine: Declared patterns of language JSON were converted to sonar.lang.patterns.json : **/*.json
+[DEBUG] ScannerEngine: Declared patterns of language IPython Notebooks were converted to sonar.lang.patterns.ipynb : **/*.ipynb
+[DEBUG] ScannerEngine: Declared patterns of language Text were converted to sonar.lang.patterns.text : 
+[DEBUG] ScannerEngine: Declared patterns of language VB.NET were converted to sonar.lang.patterns.vbnet : **/*.vb
+[DEBUG] ScannerEngine: Declared patterns of language CloudFormation were converted to sonar.lang.patterns.cloudformation : 
+[DEBUG] ScannerEngine: Declared patterns of language YAML were converted to sonar.lang.patterns.yaml : **/*.yaml,**/*.yml
+[DEBUG] ScannerEngine: Declared patterns of language Go were converted to sonar.lang.patterns.go : **/*.go
+[DEBUG] ScannerEngine: Declared patterns of language Kotlin were converted to sonar.lang.patterns.kotlin : **/*.kt,**/*.kts
+[DEBUG] ScannerEngine: Declared patterns of language Secrets were converted to sonar.lang.patterns.secrets : 
+[DEBUG] ScannerEngine: Declared patterns of language Ruby were converted to sonar.lang.patterns.ruby : **/*.rb
+[DEBUG] ScannerEngine: Declared patterns of language C# were converted to sonar.lang.patterns.cs : **/*.cs,**/*.razor
+[DEBUG] ScannerEngine: Declared patterns of language PHP were converted to sonar.lang.patterns.php : **/*.php,**/*.php3,**/*.php4,**/*.php5,**/*.phtml,**/*.inc
+[DEBUG] ScannerEngine: Declared patterns of language Terraform were converted to sonar.lang.patterns.terraform : **/*.tf
+[DEBUG] ScannerEngine: Declared patterns of language AzureResourceManager were converted to sonar.lang.patterns.azureresourcemanager : **/*.bicep
+[DEBUG] ScannerEngine: Declared patterns of language TypeScript were converted to sonar.lang.patterns.ts : **/*.ts,**/*.tsx,**/*.cts,**/*.mts
+[INFO]  ScannerEngine: Preprocessing files...
+[INFO]  ScannerEngine: 2 languages detected in 19 preprocessed files
+[INFO]  ScannerEngine: 37 files ignored because of inclusion/exclusion patterns
+[INFO]  ScannerEngine: Loading plugins for detected languages
+[DEBUG] ScannerEngine: Detected languages: [css, js]
+[INFO]  ScannerEngine: Load/download plugins
+[INFO]  ScannerEngine: Load/download plugins (done) | time=5ms
+[DEBUG] ScannerEngine: Optional language-specific plugins not loaded: [csharp, flex, go, javasymbolicexecution, java, kotlin, php, python, ruby, sonarscala, vbnet, xml]
+[DEBUG] ScannerEngine: Plugins loaded:
+[DEBUG] ScannerEngine:   * HTML Code Quality and Security 3.19.0.5695 (web)
+[DEBUG] ScannerEngine:   * JavaScript/TypeScript/CSS Code Quality and Security 10.21.1.30825 (javascript)
+[INFO]  ScannerEngine: Load project repositories
+[DEBUG] ScannerEngine: --> GET http://localhost:9000/batch/project.protobuf?key=my-react-app
+[DEBUG] ScannerEngine: <-- 200 http://localhost:9000/batch/project.protobuf?key=my-react-app (3ms, 899-byte body)
+[INFO]  ScannerEngine: Load project repositories (done) | time=83ms
+[DEBUG] ScannerEngine: Available languages:
+[DEBUG] ScannerEngine:   * HTML => "web"
+[DEBUG] ScannerEngine:   * JSP => "jsp"
+[DEBUG] ScannerEngine:   * JavaScript => "js"
+[DEBUG] ScannerEngine:   * TypeScript => "ts"
+[DEBUG] ScannerEngine:   * CSS => "css"
+[DEBUG] ScannerEngine:   * Terraform => "terraform"
+[DEBUG] ScannerEngine:   * CloudFormation => "cloudformation"
+[DEBUG] ScannerEngine:   * Kubernetes => "kubernetes"
+[DEBUG] ScannerEngine:   * Docker => "docker"
+[DEBUG] ScannerEngine:   * AzureResourceManager => "azureresourcemanager"
+[DEBUG] ScannerEngine:   * YAML => "yaml"
+[DEBUG] ScannerEngine:   * JSON => "json"
+[DEBUG] ScannerEngine:   * Text => "text"
+[DEBUG] ScannerEngine:   * Secrets => "secrets"
+[INFO]  ScannerEngine: Indexing files...
+[INFO]  ScannerEngine: Project configuration:
+[INFO]  ScannerEngine:   Excluded sources: **/node_modules/**, **/build/**, **/__tests__/**, **/coverage/**, **/public/**, **/*.test.js, **/*.spec.js, **/App.js, **/index.js, **/reportWebVitals.js, **/routes/RoutingModule.jsx, **/setupTests.js, **/__mocks__/**, **/routes/withRouter.jsx, **/components/HomePage/HomePage.jsx, **/__tests__/**, **/*.test.js, **/*.spec.js
+[INFO]  ScannerEngine:   Included tests: **/__tests__/**, **/*.test.js, **/*.spec.js
+[DEBUG] ScannerEngine: 'src/assets/img1.jpg' indexed with no language
+[DEBUG] ScannerEngine: 'src/assets/img2.jpg' indexed with no language
+[DEBUG] ScannerEngine: 'src/assets/img3.jpg' indexed with no language
+[DEBUG] ScannerEngine: 'src/assets/img4.jpg' indexed with no language
+[DEBUG] ScannerEngine: 'src/assets/logo.jpg' indexed with no language
+[DEBUG] ScannerEngine: 'src/components/Navbar/Navbar.jsx' generated metadata with charset 'UTF-8'
+[DEBUG] ScannerEngine: 'src/components/Navbar/Navbar.jsx' indexed with language 'js'
+[DEBUG] ScannerEngine: 'src/components/Navbar/Navbar.scss' generated metadata with charset 'UTF-8'
+[DEBUG] ScannerEngine: 'src/components/Navbar/Navbar.scss' indexed with language 'css'
+[DEBUG] ScannerEngine: 'src/index.css' generated metadata with charset 'UTF-8'
+[DEBUG] ScannerEngine: Average line length for src/index.css is 11
+[DEBUG] ScannerEngine: 'src/index.css' indexed with language 'css'
+[DEBUG] ScannerEngine: 'src/logo.svg' indexed with no language
+[DEBUG] ScannerEngine: 'src/pages/Dashboard/Dashboard.jsx' generated metadata with charset 'UTF-8'
+[DEBUG] ScannerEngine: 'src/pages/Dashboard/Dashboard.jsx' indexed with language 'js'
+[DEBUG] ScannerEngine: 'src/pages/Dashboard/Dashboard.scss' generated metadata with charset 'UTF-8'
+[DEBUG] ScannerEngine: 'src/pages/Dashboard/Dashboard.scss' indexed with language 'css'
+[DEBUG] ScannerEngine: 'src/pages/login/Login.jsx' generated metadata with charset 'UTF-8'
+[DEBUG] ScannerEngine: 'src/pages/login/Login.jsx' indexed with language 'js'
+[DEBUG] ScannerEngine: 'src/pages/login/Login.scss' generated metadata with charset 'UTF-8'
+[DEBUG] ScannerEngine: 'src/pages/login/Login.scss' indexed with language 'css'
+[DEBUG] ScannerEngine: 'src/pages/Registration/Registration.jsx' generated metadata with charset 'UTF-8'
+[DEBUG] ScannerEngine: 'src/pages/Registration/Registration.jsx' indexed with language 'js'
+[DEBUG] ScannerEngine: 'src/pages/Registration/Registration.scss' generated metadata with charset 'UTF-8'
+[DEBUG] ScannerEngine: 'src/pages/Registration/Registration.scss' indexed with language 'css'
+[DEBUG] ScannerEngine: 'src/__tests__/Dashboard.jsx' generated metadata as test  with charset 'UTF-8'
+[DEBUG] ScannerEngine: 'src/__tests__/Dashboard.jsx' indexed as test with language 'js'
+[DEBUG] ScannerEngine: 'src/__tests__/Login.jsx' generated metadata as test  with charset 'UTF-8'
+[DEBUG] ScannerEngine: 'src/__tests__/Login.jsx' indexed as test with language 'js'
+[DEBUG] ScannerEngine: 'src/__tests__/Navbar.jsx' generated metadata as test  with charset 'UTF-8'
+[DEBUG] ScannerEngine: 'src/__tests__/Navbar.jsx' indexed as test with language 'js'
+[DEBUG] ScannerEngine: 'src/__tests__/Registration.jsx' generated metadata as test  with charset 'UTF-8'
+[DEBUG] ScannerEngine: 'src/__tests__/Registration.jsx' indexed as test with language 'js'
+[INFO]  ScannerEngine: 19 files indexed
+[INFO]  ScannerEngine: Quality profile for css: Sonar way
+[INFO]  ScannerEngine: Quality profile for js: Sonar way
+[INFO]  ScannerEngine: ------------- Run sensors on module employee-payroll-react
+[INFO]  ScannerEngine: Load metrics repository
+[DEBUG] ScannerEngine: --> GET http://localhost:9000/api/metrics/search?ps=500&p=1
+[DEBUG] ScannerEngine: <-- 200 http://localhost:9000/api/metrics/search?ps=500&p=1 (6ms, unknown-length body)
+[INFO]  ScannerEngine: Load metrics repository (done) | time=20ms
+[DEBUG] ScannerEngine: Added 317 checks for language='ts', repository='typescript'
+[DEBUG] ScannerEngine: Added 315 checks for language='js', repository='javascript'
+[DEBUG] ScannerEngine: No registered JsAnalysisConsumer.
+[DEBUG] ScannerEngine: 'Import external issues report' skipped because of missing configuration requirements.
+Accessed configuration:
+- sonar.externalIssuesReportPaths: <empty>
+[DEBUG] ScannerEngine: 'IaC Terraform Sensor' skipped because there is no related file in current project
+[DEBUG] ScannerEngine: 'IaC CloudFormation Sensor' skipped because there is no related file in current project
+[DEBUG] ScannerEngine: 'IaC Kubernetes Sensor' skipped because there is no related file in current project
+[DEBUG] ScannerEngine: 'IaC AzureResourceManager Sensor' skipped because there is no related file in current project
+[DEBUG] ScannerEngine: 'JavaScript inside YAML analysis' skipped because there is no related file in current project
+[DEBUG] ScannerEngine: 'JavaScript inside HTML analysis' skipped because there is no related file in current project
+[DEBUG] ScannerEngine: 'Import of TSLint issues' skipped because of missing configuration requirements.
+Accessed configuration:
+- sonar.typescript.tslint.reportPaths: <empty>
+- sonar.javascript.lcov.reportPaths: coverage/lcov.info
+- sonar.externalIssuesReportPaths: <empty>
+[DEBUG] ScannerEngine: 'Import of stylelint issues' skipped because of missing configuration requirements.
+Accessed configuration:
+- sonar.typescript.tslint.reportPaths: <empty>
+- sonar.javascript.lcov.reportPaths: coverage/lcov.info
+- sonar.css.stylelint.reportPaths: <empty>
+- sonar.externalIssuesReportPaths: <empty>
+[DEBUG] ScannerEngine: 'Generic Test Executions Report' skipped because of missing configuration requirements.
+Accessed configuration:
+- sonar.typescript.tslint.reportPaths: <empty>
+- sonar.javascript.lcov.reportPaths: coverage/lcov.info
+- sonar.testExecutionReportPaths: <empty>
+- sonar.css.stylelint.reportPaths: <empty>
+- sonar.externalIssuesReportPaths: <empty>
+[DEBUG] ScannerEngine: Sensors : JaCoCo XML Report Importer -> Java Config Sensor -> HTML -> JavaScript/TypeScript analysis -> CSS Rules -> JavaScript/TypeScript Coverage -> CSS Metrics -> IaC Docker Sensor -> TextAndSecretsSensor
+[INFO]  ScannerEngine: Sensor JaCoCo XML Report Importer [jacoco]
+[INFO]  ScannerEngine: 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+[INFO]  ScannerEngine: No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+[INFO]  ScannerEngine: Sensor JaCoCo XML Report Importer [jacoco] (done) | time=3ms
+[INFO]  ScannerEngine: Sensor Java Config Sensor [iac]
+[INFO]  ScannerEngine: 0 source files to be analyzed
+[INFO]  ScannerEngine: 0/0 source files have been analyzed
+[INFO]  ScannerEngine: Sensor Java Config Sensor [iac] (done) | time=27ms
+[INFO]  ScannerEngine: Sensor HTML [web]
+[INFO]  ScannerEngine: Sensor HTML [web] (done) | time=2ms
+[INFO]  ScannerEngine: Sensor JavaScript/TypeScript analysis [javascript]
+[DEBUG] ScannerEngine: Deploying the bridge server into D:\ReactF_EmployeePayroll\employee-payroll-react\.scannerwork\.sonartmp\bridge-bundle
+[DEBUG] ScannerEngine: Setting deploy location to D:\ReactF_EmployeePayroll\employee-payroll-react\.scannerwork\.sonartmp\bridge-bundle
+[INFO]  ScannerEngine: Detected os: Windows 11 arch: amd64 alpine: false. Platform: WIN_X64
+[INFO]  ScannerEngine: Deploy location C:\Users\preus\.sonar\js\node-runtime, tagetRuntime: C:\Users\preus\.sonar\js\node-runtime\node.exe,  version: C:\Users\preus\.sonar\js\node-runtime\version.txt
+[DEBUG] ScannerEngine: Currently installed Node.js version: v22.11.0. Available version in analyzer: v22.11.0
+[DEBUG] ScannerEngine: Skipping node deploy. Deployed node has latest version.
+[DEBUG] ScannerEngine: Launching command C:\Users\preus\.sonar\js\node-runtime\node.exe -v
+[DEBUG] ScannerEngine: Deployed node version v22.11.0
+[DEBUG] ScannerEngine: Starting server
+[DEBUG] ScannerEngine: Creating Node.js process to start the bridge server on port 58766 
+[INFO]  ScannerEngine: Using embedded Node.js runtime.
+[INFO]  ScannerEngine: Using Node.js executable: 'C:\Users\preus\.sonar\js\node-runtime\node.exe'.
+[DEBUG] ScannerEngine: Checking Node.js version
+[DEBUG] ScannerEngine: Launching command C:\Users\preus\.sonar\js\node-runtime\node.exe -v
+[DEBUG] ScannerEngine: Using Node.js v22.11.0.
+[DEBUG] ScannerEngine: Launching command C:\Users\preus\.sonar\js\node-runtime\node.exe D:\ReactF_EmployeePayroll\employee-payroll-react\.scannerwork\.sonartmp\bridge-bundle\package\bin\server.cjs 58766 127.0.0.1 D:\ReactF_EmployeePayroll\employee-payroll-react\.scannerwork true false false 
+[INFO]  ScannerEngine: Memory configuration: OS (16167 MB), Node.js (4144 MB).
+[DEBUG] ScannerEngine: Starting the bridge server
+[DEBUG] ScannerEngine: The bridge server is listening on port 58766
+[DEBUG] ScannerEngine: The worker thread is running
+[DEBUG] ScannerEngine: Bridge server started on port 58766 in 1674 ms
+[DEBUG] ScannerEngine: Analysis of unchanged files will not be skipped (current analysis requires all files to be analyzed)
+[DEBUG] ScannerEngine: Initializing linter "default" with S4790,S6850,S2251,S6853,S6851,S6852,S2137,S5527,S2259,S930,S6859,S2814,S1848,S1607,S2819,S3330,S6842,S6843,S6840,S2123,S3696,S2486,S4423,S6841,S2245,S6846,S2004,S3699,S6847,S5876,S6844,S3579,S4426,S6845,S5757,S5759,S6848,S6035,S6275,S5860,S6397,S5863,S2234,S3686,S2598,S6957,S6836,S1940,S5868,S5869,S6958,S6959,S1135,S1134,S6281,S6265,S5730,S5850,S6821,S5732,S6268,S5852,S3796,S5973,S4524,S6824,S5734,S6825,S125,S6822,S5736,S128,S2589,S3799,S6823,S5856,S6827,S5739,S6270,S1264,S1143,S1481,S2692,S3782,S5842,S3785,S4634,S5843,S6811,S5604,S2699,S5725,S6019,S5728,S1119,S6819,S4084,S6486,S2681,S1472,S6249,S3531,S2201,S2685,S4502,S3776,S2688,S4624,S1479,S3415,S5958,S6807,S4507,S1128,S1126,S1125,S1121,S6252,S5042,S5264,S6594,S6353,S6479,S2430,S6477,S2310,S6478,S5148,S2432,S3403,S1219,S4619,S6481,S4043,S5254,S4165,S5257,S5256,S2301,S4721,S3516,S1226,S5260,S6351,S6332,S6333,S6330,S6331,S5122,S4275,S4036,S3981,S4830,S4158,S5247,S3500,S3984,S3863,S3504,S3626,S1314,S1313,S6582,S6442,S6321,S6443,S6440,S4144,S4143,S6441,S6325,S6326,S6323,S6324,S3972,S6329,S6327,S3854,S4822,S6328,S3735,S3616,S1439,S1321,S2092,S4030,S2094,S6671,S6551,S6793,S2990,S2077,S878,S6435,S2870,S6557,S2871,S6676,S6439,S4138,S6319,S6679,S2755,S6438,S6317,S1788,S2999,S2757,S2639,S4140,S5693,S6660,S5332,S6661,S6666,S6303,S2187,S888,S4123,S6788,S2068,S2189,S4125,S6302,S6544,S6308,S1533,S6789,S6426,S1534,S3834,S1656,S1536,S1301,S6790,S6791,S1082,S6772,S6770,S6650,S6534,S5443,S6535,S6653,S2970,S6774,S6775,S6654,S6418,S1763,S5689,S6657,S1764,S1523,S2612,S1527,S2737,S1529,S1199,S1077,S5691,S6761,S7059,S1090,S905,S6523,S6644,S108,S107,S6766,S6645,S6763,S1871,S6643,S6522,S1751,S1994,S6767,S1874,S6647,S3812,S1515,S101,S1516,S6092,S7060,S6750,S6079,S2392,S3001,S6754,S5542,S5547,S6637,S6638,S1862,S6756,S6635,S6757,S3800,S3923,S6080,S6861,S6747,S6627,S3358,S6748,S5659,S6746,S1854,S6509,S6749,S2703,S1068,S1186,S125,S128,S1940,S5869,S6958,S6959,S2598,S6957,S6836,S5868,S2234,S5863,S6397,S6275,S1264,S5860,S1143,S6035,S6270,S5759,S6606,S6848,S2004,S6846,S3699,S5876,S6847,S6844,S3579,S5757,S6845,S4426,S6842,S6843,S3696,S2123,S4423,S2486,S6840,S6841,S2245,S4782,S3330,S6281,S2819,S1607,S1848,S2933,S6859,S2137,S5527,S6853,S6851,S6852,S4790,S6850,S2251,S6749,S6509,S6747,S3358,S4325,S6748,S6627,S5659,S6746,S1854,S4322,S4323,S6861,S4619,S1226,S6478,S6477,S2430,S6598,S2310,S6479,S5148,S6353,S5264,S6594,S5260,S6590,S6351,S1479,S5958,S6807,S4507,S4623,S4502,S3776,S1119,S2688,S3415,S4624,S4621,S6249,S3531,S2685,S2201,S1472,S2681,S6486,S6481,S6819,S1125,S5728,S4634,S5843,S6019,S2699,S6811,S5725,S5604,S1128,S5842,S1121,S2692,S6252,S5042,S5739,S1135,S6827,S4524,S5734,S6824,S6825,S6822,S5736,S3799,S2589,S6823,S5856,S5730,S6268,S6821,S5850,S5732,S5973,S5852,S6265,S1134,S4084,S2639,S2999,S2757,S1301,S6317,S6438,S4138,S6319,S6679,S2755,S1788,S6439,S2990,S2077,S2870,S2871,S6557,S6676,S6435,S6551,S6550,S6671,S6793,S878,S6790,S6791,S1314,S3735,S1313,S3616,S1439,S6328,S6569,S6327,S3854,S4822,S6329,S6324,S6323,S6565,S6326,S6568,S6325,S3972,S6441,S6440,S4144,S6564,S6443,S6321,S6442,S4143,S888,S4140,S3504,S3626,S1444,S3863,S3984,S4036,S3981,S4156,S4830,S6578,S5247,S4158,S6331,S6330,S6572,S6333,S5122,S6332,S4275,S2092,S6571,S4030,S2094,S3516,S1219,S2301,S4721,S5257,S5256,S4043,S6583,S4165,S5254,S6582,S3923,S1862,S5547,S6637,S6759,S6638,S6635,S6756,S6757,S3001,S6754,S5542,S4335,S1068,S6750,S2392,S6079,S1186,S3812,S1874,S1994,S1751,S1516,S1515,S6767,S6647,S6644,S6522,S6766,S6763,S6643,S6523,S1871,S6761,S1199,S7059,S1077,S6080,S1529,S101,S1523,S1764,S1763,S2737,S5689,S6657,S6418,S2612,S5443,S6653,S6535,S2970,S6775,S6534,S6654,S6772,S6770,S6650,S6092,S1082,S7060,S1534,S1533,S6426,S6308,S6789,S1656,S6666,S6544,S6302,S2187,S4124,S6788,S4123,S2068,S6303,S5693,S6660,S5332,S6661,S108,S107,S5691,S905,S1090
+[DEBUG] ScannerEngine: Creating linter config
+[DEBUG] ScannerEngine: Linter config: {"language":"js","fileType":"MAIN"} with S101,S1068,S107,S1077,S108,S1082,S1090,S1119,S1121,S1125,S1126,S1128,S1134,S1135,S1143,S1186,S1199,S1219,S1226,S125,S1264,S128,S1301,S1313,S1314,S1321,S1439,S1472,S1479,S1481,S1515,S1516,S1523,S1527,S1529,S1533,S1534,S1536,S1656,S1751,S1763,S1764,S1788,S1848,S1854,S1862,S1871,S1874,S1940,S1994,S2004,S2068,S2077,S2092,S2094,S2123,S2137,S2189,S2201,S2234,S2245,S2251,S2259,S2301,S2310,S2392,S2430,S2432,S2589,S2598,S2612,S2639,S2681,S2685,S2688,S2692,S2703,S2737,S2755,S2757,S2814,S2819,S2870,S2871,S2990,S2999,S3001,S3330,S3358,S3403,S3500,S3504,S3516,S3531,S3579,S3616,S3626,S3686,S3696,S3699,S3735,S3776,S3782,S3785,S3796,S3799,S3800,S3812,S3834,S3854,S3863,S3923,S3972,S3981,S3984,S4030,S4036,S4043,S4084,S4123,S4125,S4138,S4140,S4143,S4144,S4158,S4165,S4275,S4423,S4426,S4502,S4507,S4524,S4619,S4624,S4634,S4721,S4790,S4822,S4830,S5042,S5122,S5148,S5247,S5254,S5256,S5257,S5260,S5264,S5332,S5443,S5527,S5542,S5547,S5604,S5659,S5689,S5691,S5693,S5725,S5728,S5730,S5732,S5734,S5736,S5739,S5757,S5759,S5842,S5843,S5850,S5852,S5856,S5860,S5868,S5869,S5876,S6019,S6035,S6249,S6252,S6265,S6268,S6270,S6275,S6281,S6302,S6303,S6308,S6317,S6319,S6321,S6323,S6324,S6325,S6326,S6327,S6328,S6329,S6330,S6331,S6332,S6333,S6351,S6353,S6397,S6418,S6435,S6438,S6439,S6440,S6441,S6442,S6443,S6477,S6478,S6479,S6481,S6486,S6509,S6522,S6523,S6534,S6535,S6544,S6551,S6557,S6582,S6594,S6627,S6635,S6637,S6638,S6643,S6644,S6645,S6647,S6650,S6653,S6654,S6657,S6660,S6661,S6666,S6671,S6676,S6679,S6746,S6747,S6748,S6749,S6750,S6754,S6756,S6757,S6761,S6763,S6766,S6767,S6770,S6772,S6774,S6775,S6788,S6789,S6790,S6791,S6793,S6807,S6811,S6819,S6821,S6822,S6823,S6824,S6825,S6827,S6836,S6840,S6841,S6842,S6843,S6844,S6845,S6846,S6847,S6848,S6850,S6851,S6852,S6853,S6859,S6861,S6957,S6958,S6959,S7059,S7060,S878,S888,S905,S930
+[DEBUG] ScannerEngine: Linter config: {"language":"js","fileType":"TEST"} with S1607,S2187,S2486,S2699,S2970,S3415,S5863,S5958,S5973,S6079,S6080,S6092,S6426
+[DEBUG] ScannerEngine: Linter config: {"language":"ts","fileType":"MAIN"} with S101,S1068,S107,S1077,S108,S1082,S1090,S1119,S1121,S1125,S1128,S1134,S1135,S1143,S1186,S1199,S1219,S1226,S125,S1264,S128,S1301,S1313,S1314,S1439,S1444,S1472,S1479,S1515,S1516,S1523,S1529,S1533,S1534,S1656,S1751,S1763,S1764,S1788,S1848,S1854,S1862,S1871,S1874,S1940,S1994,S2004,S2068,S2077,S2092,S2094,S2123,S2137,S2201,S2234,S2245,S2251,S2301,S2310,S2392,S2430,S2589,S2598,S2612,S2639,S2681,S2685,S2688,S2692,S2737,S2755,S2757,S2819,S2870,S2871,S2933,S2990,S2999,S3001,S3330,S3358,S3504,S3516,S3531,S3579,S3616,S3626,S3696,S3699,S3735,S3776,S3799,S3812,S3854,S3863,S3923,S3972,S3981,S3984,S4030,S4036,S4043,S4084,S4123,S4124,S4138,S4140,S4143,S4144,S4156,S4158,S4165,S4275,S4322,S4323,S4325,S4335,S4423,S4426,S4502,S4507,S4524,S4619,S4621,S4623,S4624,S4634,S4721,S4782,S4790,S4822,S4830,S5042,S5122,S5148,S5247,S5254,S5256,S5257,S5260,S5264,S5332,S5443,S5527,S5542,S5547,S5604,S5659,S5689,S5691,S5693,S5725,S5728,S5730,S5732,S5734,S5736,S5739,S5757,S5759,S5842,S5843,S5850,S5852,S5856,S5860,S5868,S5869,S5876,S6019,S6035,S6249,S6252,S6265,S6268,S6270,S6275,S6281,S6302,S6303,S6308,S6317,S6319,S6321,S6323,S6324,S6325,S6326,S6327,S6328,S6329,S6330,S6331,S6332,S6333,S6351,S6353,S6397,S6418,S6435,S6438,S6439,S6440,S6441,S6442,S6443,S6477,S6478,S6479,S6481,S6486,S6509,S6522,S6523,S6534,S6535,S6544,S6550,S6551,S6557,S6564,S6565,S6568,S6569,S6571,S6572,S6578,S6582,S6583,S6590,S6594,S6598,S6606,S6627,S6635,S6637,S6638,S6643,S6644,S6647,S6650,S6653,S6654,S6657,S6660,S6661,S6666,S6671,S6676,S6679,S6746,S6747,S6748,S6749,S6750,S6754,S6756,S6757,S6759,S6761,S6763,S6766,S6767,S6770,S6772,S6775,S6788,S6789,S6790,S6791,S6793,S6807,S6811,S6819,S6821,S6822,S6823,S6824,S6825,S6827,S6836,S6840,S6841,S6842,S6843,S6844,S6845,S6846,S6847,S6848,S6850,S6851,S6852,S6853,S6859,S6861,S6957,S6958,S6959,S7059,S7060,S878,S888,S905
+[DEBUG] ScannerEngine: Linter config: {"language":"ts","fileType":"TEST"} with S1607,S2187,S2486,S2699,S2970,S3415,S5863,S5958,S5973,S6079,S6080,S6092,S6426
+[DEBUG] ScannerEngine: Initializing org.sonar.plugins.javascript.analysis.AnalysisWithProgram
+[INFO]  ScannerEngine: Found 0 tsconfig.json file(s): []
+[DEBUG] ScannerEngine: Using generated tsconfig.json file C:\Users\preus\AppData\Local\Temp\tmp-11864-D1pfT6E9GAe8
+[INFO]  ScannerEngine: Creating TypeScript program
+[INFO]  ScannerEngine: TypeScript configuration file C:\Users\preus\AppData\Local\Temp\tmp-11864-D1pfT6E9GAe8
+[INFO]  ScannerEngine: 8 source files to be analyzed
+[DEBUG] ScannerEngine: program from C:\Users\preus\AppData\Local\Temp\tmp-11864-D1pfT6E9GAe8 with id 1 is created
+[INFO]  ScannerEngine: Starting analysis with current program
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es5.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2015.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2016.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2017.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2018.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2019.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2020.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.dom.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.webworker.importscripts.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.scripthost.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2015.core.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2015.collection.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2015.generator.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2015.iterable.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2015.promise.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2015.proxy.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2015.reflect.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2015.symbol.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2015.symbol.wellknown.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2016.array.include.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2016.intl.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2017.arraybuffer.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2017.date.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2017.object.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2017.sharedmemory.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2017.string.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2017.intl.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2017.typedarrays.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2018.asyncgenerator.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2018.asynciterable.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2018.intl.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2018.promise.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2018.regexp.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2019.array.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2019.object.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2019.string.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2019.symbol.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2019.intl.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2020.bigint.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2020.date.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2020.promise.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2020.sharedmemory.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2020.string.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2020.symbol.wellknown.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2020.intl.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.es2020.number.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.decorators.d.ts'
+[DEBUG] ScannerEngine: File not part of the project: 'D:/ReactF_EmployeePayroll/employee-payroll-react/.scannerwork/.sonartmp/bridge-bundle/package/bin/lib.decorators.legacy.d.ts'
+[DEBUG] ScannerEngine: Plugin version: [10.21.1.30825]
+[DEBUG] ScannerEngine: Cache strategy set to 'WRITE_ONLY' for file 'src/pages/Dashboard/Dashboard.jsx' as current analysis requires all files to be analyzed
+[DEBUG] ScannerEngine: Analyzing file: file:///D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/Dashboard/Dashboard.jsx
+[DEBUG] ScannerEngine: Analyzing file "D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/Dashboard/Dashboard.jsx" with linterId "default"
+[DEBUG] ScannerEngine: Parsing D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/Dashboard/Dashboard.jsx with typescript-eslint/parser
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:SEQ:10.21.1.30825:my-react-app:src/pages/Dashboard/Dashboard.jsx' containing 0 file(s)
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:JSON:10.21.1.30825:my-react-app:src/pages/Dashboard/Dashboard.jsx'
+[DEBUG] ScannerEngine: Cache entry created for key 'js:filemetadata:10.21.1.30825:my-react-app:src/pages/Dashboard/Dashboard.jsx'
+[DEBUG] ScannerEngine: Cache strategy set to 'WRITE_ONLY' for file 'src/__tests__/Registration.jsx' as current analysis requires all files to be analyzed
+[DEBUG] ScannerEngine: Analyzing file: file:///D:/ReactF_EmployeePayroll/employee-payroll-react/src/__tests__/Registration.jsx
+[DEBUG] ScannerEngine: Analyzing file "D:/ReactF_EmployeePayroll/employee-payroll-react/src/__tests__/Registration.jsx" with linterId "default"
+[DEBUG] ScannerEngine: Parsing D:/ReactF_EmployeePayroll/employee-payroll-react/src/__tests__/Registration.jsx with typescript-eslint/parser
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:SEQ:10.21.1.30825:my-react-app:src/__tests__/Registration.jsx' containing 0 file(s)
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:JSON:10.21.1.30825:my-react-app:src/__tests__/Registration.jsx'
+[DEBUG] ScannerEngine: Cache entry created for key 'js:filemetadata:10.21.1.30825:my-react-app:src/__tests__/Registration.jsx'
+[DEBUG] ScannerEngine: Cache strategy set to 'WRITE_ONLY' for file 'src/pages/login/Login.jsx' as current analysis requires all files to be analyzed
+[DEBUG] ScannerEngine: Analyzing file: file:///D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/login/Login.jsx
+[DEBUG] ScannerEngine: Analyzing file "D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/login/Login.jsx" with linterId "default"
+[DEBUG] ScannerEngine: Parsing D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/login/Login.jsx with typescript-eslint/parser
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:SEQ:10.21.1.30825:my-react-app:src/pages/login/Login.jsx' containing 0 file(s)
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:JSON:10.21.1.30825:my-react-app:src/pages/login/Login.jsx'
+[DEBUG] ScannerEngine: Cache entry created for key 'js:filemetadata:10.21.1.30825:my-react-app:src/pages/login/Login.jsx'
+[DEBUG] ScannerEngine: Cache strategy set to 'WRITE_ONLY' for file 'src/pages/Registration/Registration.jsx' as current analysis requires all files to be analyzed
+[DEBUG] ScannerEngine: Analyzing file: file:///D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/Registration/Registration.jsx
+[DEBUG] ScannerEngine: Analyzing file "D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/Registration/Registration.jsx" with linterId "default"
+[DEBUG] ScannerEngine: Parsing D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/Registration/Registration.jsx with typescript-eslint/parser
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:SEQ:10.21.1.30825:my-react-app:src/pages/Registration/Registration.jsx' containing 0 file(s)
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:JSON:10.21.1.30825:my-react-app:src/pages/Registration/Registration.jsx'
+[DEBUG] ScannerEngine: Cache entry created for key 'js:filemetadata:10.21.1.30825:my-react-app:src/pages/Registration/Registration.jsx'
+[DEBUG] ScannerEngine: Cache strategy set to 'WRITE_ONLY' for file 'src/__tests__/Dashboard.jsx' as current analysis requires all files to be analyzed
+[DEBUG] ScannerEngine: Analyzing file: file:///D:/ReactF_EmployeePayroll/employee-payroll-react/src/__tests__/Dashboard.jsx
+[DEBUG] ScannerEngine: Analyzing file "D:/ReactF_EmployeePayroll/employee-payroll-react/src/__tests__/Dashboard.jsx" with linterId "default"
+[DEBUG] ScannerEngine: Parsing D:/ReactF_EmployeePayroll/employee-payroll-react/src/__tests__/Dashboard.jsx with typescript-eslint/parser
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:SEQ:10.21.1.30825:my-react-app:src/__tests__/Dashboard.jsx' containing 0 file(s)
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:JSON:10.21.1.30825:my-react-app:src/__tests__/Dashboard.jsx'
+[DEBUG] ScannerEngine: Cache entry created for key 'js:filemetadata:10.21.1.30825:my-react-app:src/__tests__/Dashboard.jsx'
+[DEBUG] ScannerEngine: Cache strategy set to 'WRITE_ONLY' for file 'src/__tests__/Navbar.jsx' as current analysis requires all files to be analyzed
+[DEBUG] ScannerEngine: Analyzing file: file:///D:/ReactF_EmployeePayroll/employee-payroll-react/src/__tests__/Navbar.jsx
+[DEBUG] ScannerEngine: Analyzing file "D:/ReactF_EmployeePayroll/employee-payroll-react/src/__tests__/Navbar.jsx" with linterId "default"
+[DEBUG] ScannerEngine: Parsing D:/ReactF_EmployeePayroll/employee-payroll-react/src/__tests__/Navbar.jsx with typescript-eslint/parser
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:SEQ:10.21.1.30825:my-react-app:src/__tests__/Navbar.jsx' containing 0 file(s)
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:JSON:10.21.1.30825:my-react-app:src/__tests__/Navbar.jsx'
+[DEBUG] ScannerEngine: Cache entry created for key 'js:filemetadata:10.21.1.30825:my-react-app:src/__tests__/Navbar.jsx'
+[DEBUG] ScannerEngine: Cache strategy set to 'WRITE_ONLY' for file 'src/components/Navbar/Navbar.jsx' as current analysis requires all files to be analyzed
+[DEBUG] ScannerEngine: Analyzing file: file:///D:/ReactF_EmployeePayroll/employee-payroll-react/src/components/Navbar/Navbar.jsx
+[DEBUG] ScannerEngine: Analyzing file "D:/ReactF_EmployeePayroll/employee-payroll-react/src/components/Navbar/Navbar.jsx" with linterId "default"
+[DEBUG] ScannerEngine: Parsing D:/ReactF_EmployeePayroll/employee-payroll-react/src/components/Navbar/Navbar.jsx with typescript-eslint/parser
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:SEQ:10.21.1.30825:my-react-app:src/components/Navbar/Navbar.jsx' containing 0 file(s)
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:JSON:10.21.1.30825:my-react-app:src/components/Navbar/Navbar.jsx'
+[DEBUG] ScannerEngine: Cache entry created for key 'js:filemetadata:10.21.1.30825:my-react-app:src/components/Navbar/Navbar.jsx'
+[DEBUG] ScannerEngine: Cache strategy set to 'WRITE_ONLY' for file 'src/__tests__/Login.jsx' as current analysis requires all files to be analyzed
+[DEBUG] ScannerEngine: Analyzing file: file:///D:/ReactF_EmployeePayroll/employee-payroll-react/src/__tests__/Login.jsx
+[DEBUG] ScannerEngine: Analyzing file "D:/ReactF_EmployeePayroll/employee-payroll-react/src/__tests__/Login.jsx" with linterId "default"
+[DEBUG] ScannerEngine: Parsing D:/ReactF_EmployeePayroll/employee-payroll-react/src/__tests__/Login.jsx with typescript-eslint/parser
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:SEQ:10.21.1.30825:my-react-app:src/__tests__/Login.jsx' containing 0 file(s)
+[DEBUG] ScannerEngine: Cache entry created for key 'jssecurity:ucfgs:JSON:10.21.1.30825:my-react-app:src/__tests__/Login.jsx'
+[DEBUG] ScannerEngine: Cache entry created for key 'js:filemetadata:10.21.1.30825:my-react-app:src/__tests__/Login.jsx'
+[INFO]  ScannerEngine: Analyzed 8 file(s) with current program
+[DEBUG] ScannerEngine: Telemetry saved: {javascript.runtime.major-version=22, javascript.runtime.version=22.11, javascript.runtime.node-executable-origin=embedded}
+[INFO]  ScannerEngine: 8/8 source files have been analyzed
+[INFO]  ScannerEngine: Hit the cache for 0 out of 8
+[INFO]  ScannerEngine: Miss the cache for 8 out of 8: ANALYSIS_MODE_INELIGIBLE [8/8]
+[INFO]  ScannerEngine: Sensor JavaScript/TypeScript analysis [javascript] (done) | time=5388ms
+[INFO]  ScannerEngine: Sensor CSS Rules [javascript]
+[DEBUG] ScannerEngine: The bridge server is up, no need to start.
+[DEBUG] ScannerEngine: Analyzing file: file:///D:/ReactF_EmployeePayroll/employee-payroll-react/src/components/Navbar/Navbar.scss
+[INFO]  ScannerEngine: 5 source files to be analyzed
+[DEBUG] ScannerEngine: Found 0 issue(s)
+[DEBUG] ScannerEngine: Analyzing file: file:///D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/Dashboard/Dashboard.scss
+[DEBUG] ScannerEngine: Found 0 issue(s)
+[DEBUG] ScannerEngine: Analyzing file: file:///D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/Registration/Registration.scss
+[DEBUG] ScannerEngine: Found 0 issue(s)
+[DEBUG] ScannerEngine: Analyzing file: file:///D:/ReactF_EmployeePayroll/employee-payroll-react/src/index.css
+[DEBUG] ScannerEngine: Found 0 issue(s)
+[DEBUG] ScannerEngine: Analyzing file: file:///D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/login/Login.scss
+[DEBUG] ScannerEngine: Found 0 issue(s)
+[INFO]  ScannerEngine: 5/5 source files have been analyzed
+[INFO]  ScannerEngine: Hit the cache for 0 out of 0
+[INFO]  ScannerEngine: Miss the cache for 0 out of 0
+[INFO]  ScannerEngine: Sensor CSS Rules [javascript] (done) | time=109ms
+[INFO]  ScannerEngine: Sensor JavaScript/TypeScript Coverage [javascript]
+[DEBUG] ScannerEngine: Property sonar.javascript.lcov.reportPaths is used.
+[DEBUG] ScannerEngine: Using 'coverage/lcov.info' to resolve LCOV files
+[INFO]  ScannerEngine: Analysing [D:\ReactF_EmployeePayroll\employee-payroll-react\coverage\lcov.info]
+[WARN]  ScannerEngine: Could not resolve 1 file paths in [D:\ReactF_EmployeePayroll\employee-payroll-react\coverage\lcov.info]
+[DEBUG] ScannerEngine: Unresolved paths:
+src\routes\withRouter.jsx
+[INFO]  ScannerEngine: Sensor JavaScript/TypeScript Coverage [javascript] (done) | time=11ms
+[INFO]  ScannerEngine: Sensor CSS Metrics [javascript]
+[INFO]  ScannerEngine: Sensor CSS Metrics [javascript] (done) | time=49ms
+[INFO]  ScannerEngine: Sensor IaC Docker Sensor [iac]
+[INFO]  ScannerEngine: 0 source files to be analyzed
+[INFO]  ScannerEngine: 0/0 source files have been analyzed
+[INFO]  ScannerEngine: Sensor IaC Docker Sensor [iac] (done) | time=71ms
+[INFO]  ScannerEngine: Sensor TextAndSecretsSensor [text]
+[INFO]  ScannerEngine: Available processors: 8
+[INFO]  ScannerEngine: Using 8 threads for analysis.
+[DEBUG] ScannerEngine: Found git.exe at C:\Program Files\Git2\bin\git.exe
+[DEBUG] ScannerEngine: git --version returned: git version 2.47.1.windows.2
+[INFO]  ScannerEngine: Using git CLI to retrieve untracked files
+[INFO]  ScannerEngine: Analyzing language associated files and files included via "sonar.text.inclusions" that are tracked by git
+[INFO]  ScannerEngine: 13 source files to be analyzed
+[INFO]  ScannerEngine: 13/13 source files have been analyzed
+[INFO]  ScannerEngine: Sensor TextAndSecretsSensor [text] (done) | time=538ms
+[INFO]  ScannerEngine: ------------- Run sensors on project
+[DEBUG] ScannerEngine: 'Generic Coverage Report' skipped because of missing configuration requirements.
+Accessed configuration:
+- sonar.coverageReportPaths: <empty>
+[DEBUG] ScannerEngine: 'Import external issues report from SARIF file.' skipped because of missing configuration requirements.
+Accessed configuration:
+- sonar.coverageReportPaths: <empty>
+- sonar.sarifReportPaths: <empty>
+[DEBUG] ScannerEngine: 'Java CPD Block Indexer' skipped because there is no related file in current project
+[DEBUG] ScannerEngine: Sensors : Zero Coverage Sensor
+[INFO]  ScannerEngine: Sensor Zero Coverage Sensor
+[INFO]  ScannerEngine: Sensor Zero Coverage Sensor (done) | time=1ms
+[INFO]  ScannerEngine: ------------- Gather SCA dependencies on project
+[DEBUG] ScannerEngine: Dependency analysis skipped
+[INFO]  ScannerEngine: SCM Publisher is disabled
+[INFO]  ScannerEngine: CPD Executor Calculating CPD for 4 files
+[DEBUG] ScannerEngine: Detection of duplications for D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/login/Login.jsx
+[DEBUG] ScannerEngine: Detection of duplications for D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/Registration/Registration.jsx
+[DEBUG] ScannerEngine: Detection of duplications for D:/ReactF_EmployeePayroll/employee-payroll-react/src/pages/Dashboard/Dashboard.jsx
+[DEBUG] ScannerEngine: Detection of duplications for D:/ReactF_EmployeePayroll/employee-payroll-react/src/components/Navbar/Navbar.jsx
+[INFO]  ScannerEngine: CPD Executor CPD calculation finished (done) | time=12ms
+[INFO]  ScannerEngine: Analysis report generated in 90ms, dir size=338.6 kB
+[INFO]  ScannerEngine: Analysis report compressed in 31ms, zip size=80.5 kB
+[INFO]  ScannerEngine: Analysis report generated in D:\ReactF_EmployeePayroll\employee-payroll-react\.scannerwork\scanner-report
+[DEBUG] ScannerEngine: Upload report
+[DEBUG] ScannerEngine: --> POST http://localhost:9000/api/ce/submit?projectKey=my-react-app&projectName=employee-payroll-react (80752-byte body)
+[DEBUG] ScannerEngine: <-- 200 http://localhost:9000/api/ce/submit?projectKey=my-react-app&projectName=employee-payroll-react (21ms, 76-byte body)
+[INFO]  ScannerEngine: Analysis report uploaded in 27ms
+[DEBUG] ScannerEngine: Report metadata written to D:\ReactF_EmployeePayroll\employee-payroll-react\.scannerwork\report-task.txt
+[INFO]  ScannerEngine: ANALYSIS SUCCESSFUL, you can find the results at: http://localhost:9000/dashboard?id=my-react-app
+[INFO]  ScannerEngine: Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+[INFO]  ScannerEngine: More about the report processing at http://localhost:9000/api/ce/task?id=4a86c06a-614e-4697-bb26-9cb6b360788e
+[DEBUG] ScannerEngine: Post-jobs : 
+[DEBUG] ScannerEngine: Shutting down the worker
+[INFO]  ScannerEngine: Rule                                  | Time (ms) | Relative
+[INFO]  ScannerEngine: :-------------------------------------|----------:|--------:
+[INFO]  ScannerEngine: sonarjs/S1874                         |   179.344 |    33.6%
+[INFO]  ScannerEngine: sonarjs/S6321                         |    29.183 |     5.5%
+[INFO]  ScannerEngine: sonarjs/S4165                         |    27.083 |     5.1%
+[INFO]  ScannerEngine: sonarjs/S3863                         |    17.847 |     3.3%
+[INFO]  ScannerEngine: sonarjs/S2814                         |    15.520 |     2.9%
+[INFO]  ScannerEngine: sonarjs/S6478                         |    14.208 |     2.7%
+[INFO]  ScannerEngine: sonarjs/S2201                         |    14.032 |     2.6%
+[INFO]  ScannerEngine: sonarjs/S1854                         |    13.323 |     2.5%
+[INFO]  ScannerEngine: sonarjs/S6544                         |    11.387 |     2.1%
+[INFO]  ScannerEngine: sonarjs/S6747                         |    11.180 |     2.1%
+[INFO]  ScannerEngine: sonarjs/internal-symbol-highlighting  |     6.164 |     1.2%
+[INFO]  ScannerEngine: sonarjs/S3782                         |     6.116 |     1.1%
+[INFO]  ScannerEngine: sonarjs/S1313                         |     5.969 |     1.1%
+[INFO]  ScannerEngine: sonarjs/S7059                         |     5.742 |     1.1%
+[INFO]  ScannerEngine: sonarjs/S6957                         |     5.579 |     1.0%
+[INFO]  ScannerEngine: sonarjs/S6746                         |     5.484 |     1.0%
+[INFO]  ScannerEngine: sonarjs/S3776                         |     4.105 |     0.8%
+[INFO]  ScannerEngine: sonarjs/internal-cognitive-complexity |     3.361 |     0.6%
+[INFO]  ScannerEngine: sonarjs/S6754                         |     3.144 |     0.6%
+[INFO]  ScannerEngine: sonarjs/S6435                         |     3.128 |     0.6%
+[INFO]  ScannerEngine: sonarjs/S6757                         |     3.083 |     0.6%
+[INFO]  ScannerEngine: sonarjs/S2589                         |     3.050 |     0.6%
+[INFO]  ScannerEngine: sonarjs/S1607                         |     2.934 |     0.5%
+[INFO]  ScannerEngine: sonarjs/S2259                         |     2.490 |     0.5%
+[INFO]  ScannerEngine: sonarjs/S6481                         |     2.442 |     0.5%
+[INFO]  ScannerEngine: sonarjs/S6582                         |     2.412 |     0.5%
+[INFO]  ScannerEngine: sonarjs/S6853                         |     2.404 |     0.5%
+[INFO]  ScannerEngine: sonarjs/S5332                         |     2.397 |     0.4%
+[INFO]  ScannerEngine: sonarjs/S6440                         |     2.373 |     0.4%
+[INFO]  ScannerEngine: sonarjs/S6767                         |     2.330 |     0.4%
+[INFO]  ScannerEngine: sonarjs/S6756                         |     2.321 |     0.4%
+[INFO]  ScannerEngine: sonarjs/S6774                         |     2.149 |     0.4%
+[INFO]  ScannerEngine: sonarjs/S3854                         |     2.141 |     0.4%
+[INFO]  ScannerEngine: sonarjs/S6852                         |     2.089 |     0.4%
+[INFO]  ScannerEngine: sonarjs/S2699                         |     2.002 |     0.4%
+[INFO]  ScannerEngine: sonarjs/S1186                         |     1.997 |     0.4%
+[INFO]  ScannerEngine: sonarjs/S1534                         |     1.976 |     0.4%
+[INFO]  ScannerEngine: sonarjs/S6775                         |     1.947 |     0.4%
+[INFO]  ScannerEngine: sonarjs/S5973                         |     1.924 |     0.4%
+[INFO]  ScannerEngine: sonarjs/S5860                         |     1.735 |     0.3%
+[INFO]  ScannerEngine: sonarjs/S1226                         |     1.722 |     0.3%
+[INFO]  ScannerEngine: sonarjs/S4275                         |     1.689 |     0.3%
+[INFO]  ScannerEngine: sonarjs/S1472                         |     1.689 |     0.3%
+[INFO]  ScannerEngine: sonarjs/S5856                         |     1.662 |     0.3%
+[INFO]  ScannerEngine: sonarjs/S6418                         |     1.650 |     0.3%
+[INFO]  ScannerEngine: sonarjs/S6477                         |     1.530 |     0.3%
+[INFO]  ScannerEngine: sonarjs/S6822                         |     1.507 |     0.3%
+[INFO]  ScannerEngine: sonarjs/S2189                         |     1.422 |     0.3%
+[INFO]  ScannerEngine: sonarjs/S6479                         |     1.415 |     0.3%
+[INFO]  ScannerEngine: sonarjs/S6551                         |     1.402 |     0.3%
+[INFO]  ScannerEngine: sonarjs/S4822                         |     1.386 |     0.3%
+[INFO]  ScannerEngine: sonarjs/S3800                         |     1.354 |     0.3%
+[INFO]  ScannerEngine: sonarjs/S6661                         |     1.292 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S3330                         |     1.282 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S6441                         |     1.264 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S6766                         |     1.245 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S5443                         |     1.241 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S2234                         |     1.226 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S5527                         |     1.204 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S6811                         |     1.179 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S5122                         |     1.057 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S6438                         |     1.020 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S6848                         |     1.015 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S2068                         |     1.009 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S6847                         |     0.976 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S4423                         |     0.971 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S6325                         |     0.953 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S6351                         |     0.905 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S2301                         |     0.871 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S7060                         |     0.869 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S6535                         |     0.859 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S6671                         |     0.851 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S1763                         |     0.849 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S6534                         |     0.847 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S905                          |     0.826 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S4502                         |     0.813 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S1871                         |     0.812 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S1082                         |     0.806 |     0.2%
+[INFO]  ScannerEngine: sonarjs/S3403                         |     0.788 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5863                         |     0.775 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S3796                         |     0.767 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S4084                         |     0.750 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6523                         |     0.738 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6270                         |     0.724 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5542                         |     0.719 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S3516                         |     0.701 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S2681                         |     0.694 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S3579                         |     0.693 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S4043                         |     0.683 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5256                         |     0.673 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S4123                         |     0.655 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6079                         |     0.639 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S1523                         |     0.611 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S2137                         |     0.611 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6442                         |     0.601 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S1481                         |     0.601 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6761                         |     0.592 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S128                          |     0.579 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S125                          |     0.578 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S1527                         |     0.570 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5247                         |     0.546 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6638                         |     0.545 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6821                         |     0.527 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6772                         |     0.524 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6750                         |     0.521 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S2092                         |     0.521 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6791                         |     0.517 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S3972                         |     0.506 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S3699                         |     0.500 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6859                         |     0.499 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S1128                         |     0.497 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6770                         |     0.492 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6092                         |     0.489 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S930                          |     0.485 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S4721                         |     0.481 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6080                         |     0.479 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S4030                         |     0.477 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S2598                         |     0.470 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S4143                         |     0.470 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5958                         |     0.457 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6748                         |     0.454 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S3415                         |     0.450 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6317                         |     0.447 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5693                         |     0.444 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5725                         |     0.437 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6790                         |     0.430 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S4144                         |     0.424 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6035                         |     0.423 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5659                         |     0.420 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6557                         |     0.420 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6302                         |     0.414 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S2432                         |     0.410 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6522                         |     0.407 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6851                         |     0.404 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S2990                         |     0.402 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S2612                         |     0.395 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6333                         |     0.392 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6645                         |     0.389 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6637                         |     0.386 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5730                         |     0.386 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S2755                         |     0.381 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S2688                         |     0.378 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5042                         |     0.378 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S1862                         |     0.378 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S4790                         |     0.377 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5691                         |     0.371 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S4036                         |     0.362 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6850                         |     0.357 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S1515                         |     0.351 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5254                         |     0.348 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S1077                         |     0.343 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6653                         |     0.340 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6509                         |     0.339 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6643                         |     0.332 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6844                         |     0.328 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5759                         |     0.314 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6845                         |     0.313 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5547                         |     0.309 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S1656                         |     0.302 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5876                         |     0.289 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S2871                         |     0.288 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S1788                         |     0.287 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S1199                         |     0.285 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S2430                         |     0.283 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S5604                         |     0.282 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6793                         |     0.281 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S2245                         |     0.281 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S6328                         |     0.275 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S3686                         |     0.274 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S1940                         |     0.272 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S4158                         |     0.271 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S107                          |     0.271 |     0.1%
+[INFO]  ScannerEngine: sonarjs/S1764                         |     0.266 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1143                         |     0.266 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6657                         |     0.265 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6666                         |     0.260 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2392                         |     0.260 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6265                         |     0.260 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6840                         |     0.258 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6819                         |     0.258 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6861                         |     0.256 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5689                         |     0.254 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S4830                         |     0.250 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6824                         |     0.249 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1751                         |     0.247 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2094                         |     0.244 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6647                         |     0.241 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5260                         |     0.237 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6749                         |     0.235 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6439                         |     0.234 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6676                         |     0.233 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6353                         |     0.228 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1068                         |     0.225 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2077                         |     0.222 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1121                         |     0.221 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3923                         |     0.216 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2970                         |     0.215 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6329                         |     0.212 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5264                         |     0.207 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2757                         |     0.203 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S4426                         |     0.197 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5843                         |     0.197 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1314                         |     0.191 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6660                         |     0.186 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6827                         |     0.186 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3500                         |     0.185 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6679                         |     0.181 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6763                         |     0.174 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5257                         |     0.173 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6627                         |     0.171 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5734                         |     0.170 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3626                         |     0.168 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S4125                         |     0.168 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6327                         |     0.166 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6644                         |     0.164 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1516                         |     0.164 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6825                         |     0.164 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6654                         |     0.163 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6841                         |     0.162 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2685                         |     0.157 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1536                         |     0.156 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6426                         |     0.155 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1125                         |     0.154 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5148                         |     0.154 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6303                         |     0.153 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3358                         |     0.146 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6486                         |     0.145 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2999                         |     0.144 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6275                         |     0.140 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6650                         |     0.138 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S4507                         |     0.136 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6958                         |     0.135 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6807                         |     0.134 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2004                         |     0.133 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1126                         |     0.132 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6635                         |     0.131 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2187                         |     0.130 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S4140                         |     0.129 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3981                         |     0.128 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6268                         |     0.128 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6823                         |     0.128 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6842                         |     0.126 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1135                         |     0.124 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6789                         |     0.122 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5757                         |     0.121 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6308                         |     0.120 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6846                         |     0.118 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6788                         |     0.118 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5842                         |     0.117 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6332                         |     0.116 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6959                         |     0.113 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1529                         |     0.111 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6330                         |     0.106 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S101                          |     0.104 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3834                         |     0.100 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6331                         |     0.096 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S108                          |     0.094 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3812                         |     0.090 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6843                         |     0.088 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1090                         |     0.087 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5868                         |     0.086 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2737                         |     0.082 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3504                         |     0.079 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1994                         |     0.078 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1219                         |     0.078 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3799                         |     0.075 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6319                         |     0.075 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2692                         |     0.075 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S4138                         |     0.074 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6397                         |     0.074 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2310                         |     0.073 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6326                         |     0.073 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2123                         |     0.071 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2639                         |     0.070 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S878                          |     0.067 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5736                         |     0.066 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1533                         |     0.066 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5732                         |     0.065 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6324                         |     0.060 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5869                         |     0.059 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5850                         |     0.057 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2819                         |     0.055 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6019                         |     0.053 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2870                         |     0.053 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2703                         |     0.052 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6323                         |     0.052 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5852                         |     0.052 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S4619                         |     0.047 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5728                         |     0.045 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S4634                         |     0.044 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1848                         |     0.044 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S5739                         |     0.042 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6594                         |     0.041 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6836                         |     0.037 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3735                         |     0.037 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2251                         |     0.036 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6281                         |     0.036 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3696                         |     0.034 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3785                         |     0.034 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S2486                         |     0.034 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1321                         |     0.032 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3616                         |     0.032 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S4624                         |     0.031 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S888                          |     0.025 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6443                         |     0.025 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3001                         |     0.025 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3531                         |     0.025 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1439                         |     0.021 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1134                         |     0.020 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1119                         |     0.018 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S4524                         |     0.017 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1479                         |     0.017 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1301                         |     0.014 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S3984                         |     0.013 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S1264                         |     0.013 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6249                         |     0.005 |     0.0%
+[INFO]  ScannerEngine: sonarjs/S6252                         |     0.004 |     0.0%
+[DEBUG] ScannerEngine: The worker thread exited with code 0
+[DEBUG] ScannerEngine: The bridge server shut down
+[INFO]  ScannerEngine: Rule | Time (ms) | Relative
+[INFO]  ScannerEngine: :----|----------:|--------:
+[INFO]  ScannerEngine: Analysis total time: 8.367 s
+[INFO]  ScannerEngine: SonarScanner Engine completed successfully
+[DEBUG] ScannerEngine: Cleanup org.eclipse.jgit.util.FS$FileStoreAttributes$$Lambda$362/0x0000013fb726fac8@3ff57625 during JVM shutdown
+[DEBUG] Bootstrapper: Scanner engine finished successfully

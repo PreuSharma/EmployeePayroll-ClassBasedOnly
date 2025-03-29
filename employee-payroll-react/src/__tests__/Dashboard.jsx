@@ -121,7 +121,6 @@ describe("Employee Dashboard Testing", () => {
       expect(screen.getByText("Bob")).toBeInTheDocument();
     });
   
-    // Simulate search input event
     const searchButton = screen.getByRole("button", { name: /search/i });
     fireEvent.click(searchButton);
     

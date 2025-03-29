@@ -1,0 +1,28 @@
+[INFO]  Bootstrapper: Unable to read "package.json" file
+[DEBUG] Bootstrapper: Setting the log level to DEBUG due to verbose mode
+[DEBUG] Bootstrapper: Properties: {
+  'sonar.userHome': 'C:\\Users\\preus\\.sonar',
+  'sonar.working.directory': '.scannerwork',
+  'sonar.scanner.os': 'win32',
+  'sonar.scanner.arch': 'x64',
+  'sonar.exclusions': 'node_modules/**,bower_components/**,jspm_packages/**,typings/**,lib-cov/**',
+  'sonar.verbose': 'true',
+  'sonar.scanner.internal.isSonarCloud': 'true',
+  'sonar.host.url': 'https://sonarcloud.io',
+  'sonar.scanner.apiBaseUrl': 'https://api.sonarcloud.io',
+  'sonar.scanner.app': 'ScannerNpm',
+  'sonar.scanner.appVersion': '4.2.8',
+  'sonar.scanner.bootstrapStartTime': '1743224243669',
+  'sonar.scanner.wasJreCacheHit': 'disabled',
+  'sonar.scanner.wasEngineCacheHit': 'false',
+  'sonar.projectBaseDir': 'D:\\ReactF_EmployeePayroll'
+}
+[INFO]  Bootstrapper: Platform: win32 x64
+[DEBUG] Bootstrapper: Detecting proxy: No proxy detected
+[INFO]  Bootstrapper: Server URL: https://sonarcloud.io
+[INFO]  Bootstrapper: Version: 4.2.8
+[DEBUG] Bootstrapper: Check if Server supports JRE provisioning
+[INFO]  Bootstrapper: JRE provisioning is supported
+[DEBUG] Bootstrapper: Detecting latest version of JRE
+[DEBUG] Bootstrapper: Downloading JRE information for win32 x64 from /analysis/jres
+[ERROR] Bootstrapper: An error occurred: AxiosError: Request failed with status code 401
