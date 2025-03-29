@@ -4,7 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import "../login/Login.scss"; 
 import toast, { Toaster } from "react-hot-toast";
 import Navbar from "../../components/Navbar/Navbar";
-import { withRouter } from "../../routes/withRouter";
+
 
 
 const clientId = "618248214889-qd4nlr31ko28ghslq5pi17986ihtvaav.apps.googleusercontent.com";
@@ -39,7 +39,7 @@ class Login extends Component {
 
   render() {
     if (this.state.redirect) {
-      this.props.navigate("/homePage/dashboard"); 
+      window.location.href = "/homePage/dashboard"; 
       return null;
     }
 
@@ -59,4 +59,6 @@ class Login extends Component {
   }
 }
 
-export default withRouter(Login);
+
+export default Login;
+

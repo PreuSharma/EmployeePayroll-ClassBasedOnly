@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../Navbar/Navbar.scss";
 import Img from "../../assets/logo.jpg";
 import { FaUserCircle } from "react-icons/fa";
-import { withRouter } from "../../routes/withRouter";
+
 
 class Navbar extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class Navbar extends Component {
 
   handleLogout = () => {
     localStorage.removeItem("user");
-    this.props.navigate("/");
+    window.location.href = "/"; 
   };
 
   render() {
@@ -45,20 +45,20 @@ class Navbar extends Component {
           <div className="navbar-user">
             {user ? (
               <div className="navbar-user-dropdown">
-                <div className="user-icon" onClick={this.toggleDropdown}>
+                <button className="user-icon" onClick={this.toggleDropdown}>
                   <FaUserCircle className="user-icon" size={30} />
-                </div>
+                </button>
 
                 {dropdownOpen && (
                   <div className="dropdown-menu">
                     <div className="dropdown-item">{user.name}</div>
                     <div className="dropdown-item">{user.email}</div>
-                    <div
+                    <button
                       className="dropdown-item logout"
                       onClick={this.handleLogout}
                     >
                       Logout
-                    </div>
+                    </button>
                   </div>
                 )}
               </div>
@@ -73,4 +73,4 @@ class Navbar extends Component {
     );
   }
 }
-export default withRouter(Navbar);
+export default Navbar;

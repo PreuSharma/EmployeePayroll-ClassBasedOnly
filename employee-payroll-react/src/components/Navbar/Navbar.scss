@@ -29,6 +29,8 @@
       font-size: 30px;
       color: #333;
       transition: color 0.3s ease;
+      border: none;
+      background-color: white;
   
       &:hover {
         color: #007bff;
@@ -68,6 +70,8 @@
     .logout {
       color: red;
       font-weight: bold;
+      width: 10rem;
+      margin-left: 1rem;
   
       &:hover {
         background: rgba(255, 0, 0, 0.1);

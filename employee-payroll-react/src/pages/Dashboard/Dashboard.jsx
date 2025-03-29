@@ -5,7 +5,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import toast, { Toaster } from "react-hot-toast";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css"; 
-import { withRouter } from "../../routes/withRouter";
+
 
 class Dashboard extends Component {
   constructor(props) {
@@ -31,26 +31,34 @@ class Dashboard extends Component {
       }
     });
   };
-  
 
-  handleSearch = (event) => {
+
+  handleSearch = async (event) => {
     const query = event.target.value.toLowerCase();
-    this.setState({ searchQuery: query }, () => {
-      $.get("http://localhost:3001/employees", (data) => {
-        const filteredData = data.filter((employee) =>
-          employee.name.toLowerCase().includes(query) ||
-          employee.gender.toLowerCase().includes(query) ||
-          employee.departments.some((dept) => dept.toLowerCase().includes(query)) ||
-          employee.salary.toLowerCase().includes(query)
-        );
-        this.setState({ employees: filteredData });
-      });
-    });
+    this.setState({ searchQuery: query });
+  
+    try {
+      const response = await fetch("http://localhost:3001/employees");
+      const data = await response.json();
+      const filteredData = this.filterEmployees(data, query);
+      this.setState({ employees: filteredData });
+    } catch (error) {
+      console.error("Error fetching employees:", error);
+    }
   };
-
+  
+  filterEmployees = (employees, query) => {
+    return employees.filter((employee) => 
+      employee.name.toLowerCase().includes(query) ||
+      employee.gender.toLowerCase().includes(query) ||
+      employee.departments.some((dept) => dept.toLowerCase().includes(query)) ||
+      employee.salary.toString().includes(query)
+    );
+  };
+  
   handleEdit = (employee) => {
     localStorage.setItem("editEmployee", JSON.stringify(employee)); 
-    this.props.navigate("/homePage/registration"); 
+    window.location.href = "/homePage/registration";
 
   };
 
@@ -148,8 +156,8 @@ class Dashboard extends Component {
                     </td>
                     <td>{employee.name}</td>
                     <td>{employee.gender}</td>
-                    <td>{employee.departments.map((dept, index) => (
-                        <span key={index} className={`department-badge ${dept.toLowerCase()}`}>
+                    <td>{employee.departments.map((dept) => (
+                        <span key={dept} className={`department-badge ${dept.toLowerCase()}`}>
                           {dept}
                         </span>
                       ))}</td>
@@ -186,4 +194,4 @@ class Dashboard extends Component {
     );
   }
 }
-export default withRouter(Dashboard);
+export default Dashboard;

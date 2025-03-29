@@ -6,8 +6,6 @@ import profileImg2 from "../../assets/img2.jpg";
 import profileImg3 from "../../assets/img3.jpg";
 import profileImg4 from "../../assets/img4.jpg";
 import toast, { Toaster } from "react-hot-toast";
-import { withRouter } from "../../routes/withRouter";
-
 
 class Registration extends Component {
   constructor(props) {
@@ -32,11 +30,17 @@ class Registration extends Component {
     }
   }
 
-
-
   validateForm = () => {
     let errors = {};
-    const { name, profileImage, gender, departments, salary, startDate, notes } = this.state;
+    const {
+      name,
+      profileImage,
+      gender,
+      departments,
+      salary,
+      startDate,
+      notes,
+    } = this.state;
 
     if (!name.trim()) {
       errors.name = "*Name is required.";
@@ -69,11 +73,8 @@ class Registration extends Component {
     }
 
     this.setState({ errors });
-    return Object.keys(errors).length === 0; 
+    return Object.keys(errors).length === 0;
   };
-
-
-
 
   handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -91,39 +92,38 @@ class Registration extends Component {
         textarea.style.height = textarea.scrollHeight + "px";
       }
     }
-
-
   };
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!this.validateForm()) {
       return;
     }
-  
+
     try {
       const dataToSend = { ...this.state };
       if (!this.state.id) {
         delete dataToSend.id;
       }
       if (this.state.id) {
-        await axios.put(`http://localhost:3001/employees/${this.state.id}`, dataToSend);
+        await axios.put(
+          `http://localhost:3001/employees/${this.state.id}`,
+          dataToSend
+        );
         toast.success("Employee updated successfully!");
       } else {
-        const response = await axios.post("http://localhost:3001/employees", dataToSend);
+        await axios.post("http://localhost:3001/employees", dataToSend);
         toast.success("Employee added successfully!");
       }
       localStorage.removeItem("editEmployee");
       setTimeout(() => {
-      this.props.navigate("/homePage/dashboard"); 
-
-      }, 1500); 
+        window.location.href = "/homePage/dashboard";
+      }, 1500);
     } catch (error) {
       toast.error("Failed to save employee details");
     }
   };
-  
 
   handleReset = () => {
     this.setState({
@@ -140,7 +140,6 @@ class Registration extends Component {
 
   render() {
     return (
-      
       <div className="registration-container">
         <Toaster position="top-right" reverseOrder={false} />
         <div className="registration-form">
@@ -148,55 +147,71 @@ class Registration extends Component {
           <main className="registration-form-cnt">
             <form onSubmit={this.handleSubmit}>
               <div className="form-cnt-name">
-                <label className="label" htmlFor="name">Name:</label>
+                <label className="label" htmlFor="name">
+                  Name:
+                </label>
                 <input
-                id="name"
-                className="form-cnt-name-textbox"
+                  id="name"
+                  className="form-cnt-name-textbox"
                   type="text"
                   name="name"
                   value={this.state.name}
                   onChange={this.handleChange}
-                
                 />
               </div>
-              {this.state.errors.name && <span className="error-message">{this.state.errors.name}</span>}
-
+              {this.state.errors.name && (
+                <span className="error-message">{this.state.errors.name}</span>
+              )}
 
               <div className="form-cnt-profile">
-                <label className="label" htmlFor="profileImg">Profile Image:</label>
+                <label className="label" htmlFor="profileImg">
+                  Profile Image:
+                </label>
                 <div className="form-cnt-profile-imgradio">
                   <div className="profile-images-container">
-                  {[profileImg1, profileImg2, profileImg3, profileImg4].map((img, index) => (
-                    <label key={index} className="form-cnt-profile-imgradio-1">
-                      <input
-                        type="radio"
-                        name="profileImage"
-                        value={img}
-                        checked={this.state.profileImage === img}
-                        onChange={this.handleChange}
-                        
-                      />
-                      <img className="radio-images" src={img} alt={`img${index + 1}`} />
-                    </label>
-                  ))}
-                </div>
+                    {[profileImg1, profileImg2, profileImg3, profileImg4].map(
+                      (img, index) => (
+                        <label
+                          key={img}
+                          className="form-cnt-profile-imgradio-1"
+                        >
+                          <input
+                            type="radio"
+                            name="profileImage"
+                            value={img}
+                            checked={this.state.profileImage === img}
+                            onChange={this.handleChange}
+                          />
+                          <img
+                            className="radio-images"
+                            src={img}
+                            alt={`img${index + 1}`}
+                          />
+                        </label>
+                      )
+                    )}
+                  </div>
                 </div>
               </div>
-              {this.state.errors.profileImage && <span className="error-message">{this.state.errors.profileImage}</span>}
-
-
+              {this.state.errors.profileImage && (
+                <span className="error-message">
+                  {this.state.errors.profileImage}
+                </span>
+              )}
 
               <div className="form-cnt-gender">
-                <label className="label" htmlFor="gender">Gender:</label>
+                <label className="label" htmlFor="gender">
+                  Gender:
+                </label>
                 <label>
                   <input
                     type="radio"
                     name="gender"
                     value="male"
                     checked={this.state.gender === "male"}
-                    onChange={this.handleChange}
-                  />
-                  Male
+                    onChange={this.handleChange}/>
+
+                  <span>Male</span>
                 </label>
                 <label>
                   <input
@@ -205,35 +220,51 @@ class Registration extends Component {
                     value="female"
                     checked={this.state.gender === "female"}
                     onChange={this.handleChange}
-                  
                   />
-                  Female
+                  <span>Female</span>
                 </label>
               </div>
-              {this.state.errors.gender && <span className="error-message">{this.state.errors.gender}</span>}
-
+              {this.state.errors.gender && (
+                <span className="error-message">
+                  {this.state.errors.gender}
+                </span>
+              )}
 
               <div className="form-cnt-department">
-                <label className="label" htmlFor="department">Department:</label>
-                {["HR", "Sales", "Finance", "Engineer", "Others"].map((dept) => (
-                  <label id="labelDepartment" key={dept}>
-                    <input
-                      type="checkbox"
-                      name="departments"
-                      value={dept}
-                      checked={this.state.departments.includes(dept)}
-                      onChange={this.handleChange}
-                    />
-                    {dept}
-                  </label>
-                ))}
+                <label className="label" htmlFor="department">
+                  Department:
+                </label>
+                {["HR", "Sales", "Finance", "Engineer", "Others"].map(
+                  (dept) => (
+                    <label id="labelDepartment" key={dept}>
+                      <input
+                        type="checkbox"
+                        name="departments"
+                        value={dept}
+                        checked={this.state.departments.includes(dept)}
+                        onChange={this.handleChange}
+                      />
+                      {dept}
+                    </label>
+                  )
+                )}
               </div>
-              {this.state.errors.departments && <span className="error-message">{this.state.errors.departments}</span>}
-
+              {this.state.errors.departments && (
+                <span className="error-message">
+                  {this.state.errors.departments}
+                </span>
+              )}
 
               <div className="form-cnt-salary">
-                <label className="label" htmlFor="salary">Salary:</label>
-                <select id="salary" name="salary" value={this.state.salary} onChange={this.handleChange} >
+                <label className="label" htmlFor="salary">
+                  Salary:
+                </label>
+                <select
+                  id="salary"
+                  name="salary"
+                  value={this.state.salary}
+                  onChange={this.handleChange}
+                >
                   <option value="">Select Salary</option>
                   {["10,000", "20,000", "30,000", "40,000"].map((sal) => (
                     <option key={sal} value={sal}>
@@ -242,29 +273,70 @@ class Registration extends Component {
                   ))}
                 </select>
               </div>
-              {this.state.errors.salary && <span className="error-message">{this.state.errors.salary}</span>}
-
+              {this.state.errors.salary && (
+                <span className="error-message">
+                  {this.state.errors.salary}
+                </span>
+              )}
 
               <div className="form-cnt-salary-selectStartDate">
-                <label className="label" htmlFor="startDate">Start Date:</label>
-                <input id="startDate" className="dmy" type="date" name="startDate" value={this.state.startDate} onChange={this.handleChange}  />
+                <label className="label" htmlFor="startDate">
+                  Start Date:
+                </label>
+                <input
+                  id="startDate"
+                  className="dmy"
+                  type="date"
+                  name="startDate"
+                  value={this.state.startDate}
+                  onChange={this.handleChange}
+                />
               </div>
-              {this.state.errors.startDate && <span className="error-message">{this.state.errors.startDate}</span>}
-
+              {this.state.errors.startDate && (
+                <span className="error-message">
+                  {this.state.errors.startDate}
+                </span>
+              )}
 
               <div className="form-cnt-notes">
-                <label className="label" htmlFor="notes">Notes:</label>
-                <textarea id="notes" className="textarea" name="notes" value={this.state.notes} onChange={this.handleChange}></textarea>
+                <label className="label" htmlFor="notes">
+                  Notes:
+                </label>
+                <textarea
+                  id="notes"
+                  className="textarea"
+                  name="notes"
+                  value={this.state.notes}
+                  onChange={this.handleChange}
+                ></textarea>
               </div>
               {this.state.notes.length > 200 && (
-    <span className="error-message">*Notes should not exceed 200 characters.</span>
-  )}
-              
+                <span className="error-message">
+                  *Notes should not exceed 200 characters.
+                </span>
+              )}
 
               <div className="form-cnt-buttons">
-                <button type="button" id="cancelBtn" className="btn" onClick={() =>(this.props.navigate("/homePage/dashboard"))}>Cancel</button>
-                <div className="form-cnt-buttons-submitreset"><button type="submit" id="submitBtn" className="btn">{this.state.id ? "Update" : "Submit"}</button>
-                <button type="reset" id="resetBtn" className="btn" onClick={this.handleReset}>Reset</button>
+                <button
+                  type="button"
+                  id="cancelBtn"
+                  className="btn"
+                  onClick={() => window.location.href = "/homePage/dashboard"}
+                >
+                  Cancel
+                </button>
+                <div className="form-cnt-buttons-submitreset">
+                  <button type="submit" id="submitBtn" className="btn">
+                    {this.state.id ? "Update" : "Submit"}
+                  </button>
+                  <button
+                    type="reset"
+                    id="resetBtn"
+                    className="btn"
+                    onClick={this.handleReset}
+                  >
+                    Reset
+                  </button>
                 </div>
               </div>
             </form>
@@ -275,4 +347,4 @@ class Registration extends Component {
   }
 }
 
-export default withRouter(Registration);
+export default Registration;

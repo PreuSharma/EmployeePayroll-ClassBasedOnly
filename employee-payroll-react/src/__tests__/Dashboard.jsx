@@ -115,6 +115,9 @@ describe("Employee Dashboard Testing", () => {
   
     await waitFor(() => {
       expect(screen.getByText("Alice")).toBeInTheDocument();
+    });
+
+    await waitFor(() => {
       expect(screen.getByText("Bob")).toBeInTheDocument();
     });
   
@@ -127,6 +130,9 @@ describe("Employee Dashboard Testing", () => {
   
     await waitFor(() => {
       expect(screen.getByText("Alice")).toBeInTheDocument();
+    });
+
+    await waitFor(() => {
       expect(screen.queryByText("Bob")).not.toBeInTheDocument(); 
     });
   });

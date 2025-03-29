@@ -2,10 +2,24 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import Login from "../pages/login/Login";
 import { jwtDecode } from "jwt-decode";
 import "@testing-library/jest-dom";
+import toast from "react-hot-toast";
 
 jest.mock("jwt-decode", () => ({
   jwtDecode: jest.fn(),
 }));
+
+jest.mock("react-hot-toast", () => {
+  const toast = {
+    success: jest.fn(),
+    error: jest.fn(),
+  };
+  return {
+    ...toast,
+    Toaster: () => <div data-testid="mock-toaster" />,
+    default: toast,
+  };
+});
+
 
 jest.mock("@react-oauth/google", () => ({
   GoogleOAuthProvider: ({ children }) => <div>{children}</div>,
@@ -55,5 +69,24 @@ describe("Login Component Testing", () => {
       );
     });
   });
+
+
+  test("shows success toast on successful login", async () => {
+    jwtDecode.mockReturnValue({ name: "John Doe", email: "john@example.com" });
+
+    render(<Login />);
+    fireEvent.click(screen.getByRole("button", { name: /mock google login/i }));
+
+    await waitFor(() => {
+      expect(toast.success).toHaveBeenCalledWith("Login Successful!");
+    });
+  });
+
+
+  test("renders the Toaster component", () => {
+    render(<Login />);
+    expect(screen.getByTestId("mock-toaster")).toBeInTheDocument();
+  });
+
 
 });
