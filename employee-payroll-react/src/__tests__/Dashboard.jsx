@@ -3,13 +3,16 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
 import jquery from "jquery";
 import Dashboard from "../pages/Dashboard/Dashboard";
-
 jest.mock("jquery", () => ({
-  ajax: jest.fn(),
-  get: jest.fn(),
-  
+  ajax: jest.fn((options) => options.success && options.success()), // Mock success response for DELETE
+  get: jest.fn((url, callback) => callback(mockEmployees)), // Mock GET request
 }));
 
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve(mockEmployees),
+  })
+);
 
 const mockEmployees = [
   {
@@ -35,6 +38,20 @@ const mockEmployees = [
 
 
 describe("Employee Dashboard Testing", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(mockEmployees),
+      })
+    );
+  
+    jquery.get.mockImplementation((url, callback) => callback(mockEmployees));
+  
+    // Mock window.confirm to always return true (simulate clicking "OK")
+    global.confirm = jest.fn(() => true);
+  });
+  
 
   test("Employee Payroll Dashboard title", () => {
     render(<Dashboard />);
@@ -109,31 +126,74 @@ describe("Employee Dashboard Testing", () => {
 
   
   test("filters employees based on search query", async () => {
+    // Mock both jQuery.get (for initial fetch) and fetch (for search filtering)
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(mockEmployees),
+      })
+    );
+  
     jquery.get.mockImplementation((url, callback) => callback(mockEmployees));
   
     render(<Dashboard />);
   
     await waitFor(() => {
       expect(screen.getByText("Alice")).toBeInTheDocument();
-    });
-
-    await waitFor(() => {
       expect(screen.getByText("Bob")).toBeInTheDocument();
     });
   
+    // Click search button to show the input field
     const searchButton = screen.getByRole("button", { name: /search/i });
     fireEvent.click(searchButton);
-    
+  
+    // Search for "Alice"
     const searchInput = screen.getByPlaceholderText("Search");
     fireEvent.change(searchInput, { target: { value: "Alice" } });
   
     await waitFor(() => {
       expect(screen.getByText("Alice")).toBeInTheDocument();
     });
-
+  
+    // Bob should be filtered out
     await waitFor(() => {
-      expect(screen.queryByText("Bob")).not.toBeInTheDocument(); 
+      expect(screen.queryByText("Bob")).not.toBeInTheDocument();
     });
   });
 
+
+  test("Displays 'No image' if profileImage is missing", async () => {
+    jquery.get.mockImplementation((url, callback) => callback(mockEmployees));
+
+    render(<Dashboard />);
+    await waitFor(() => {
+      expect(screen.getByText("No image")).toBeInTheDocument();
+    });
+  });
+  
+
+  test("Formats startDate correctly in DD/MM/YYYY format", async () => {
+    jquery.get.mockImplementation((url, callback) => callback(mockEmployees));
+
+    render(<Dashboard />);
+    await waitFor(() => {
+      expect(screen.getByText("1/1/2024")).toBeInTheDocument();
+      expect(screen.getByText("15/5/2023")).toBeInTheDocument();
+    });
+  });
+
+  test("navigates to the registration page with employee data when Edit button is clicked", () => {
+    render(<Dashboard />);
+    
+    const editButton = screen.getAllByRole("button", { name: /edit/i })[0];
+    fireEvent.click(editButton);
+
+    expect(localStorage.getItem("editEmployee")).toBeTruthy();
+    expect(JSON.parse(localStorage.getItem("editEmployee")).name).toBe("Bob");
+  });
+
+
+
+  
+  
+  
 });

@@ -175,6 +175,7 @@ class Dashboard extends Component {
                       </button>
                       <button
                         className="delete-btn"
+                        aria-label="Delete"
                         onClick={() => this.handleDelete(employee.id)}
                       >
                         <i className="fas fa-trash-alt"></i>
