@@ -3,7 +3,7 @@ import Registration from "../pages/Registration/Registration";
 import toast from "react-hot-toast";
 const axios = require("axios");
 
-jest.mock("axios");
+
 jest.mock("axios", () => ({
   post: jest.fn(),
   get: jest.fn(),
@@ -50,12 +50,18 @@ describe("Employee Registration Testing", () => {
   });
 
   
-
   test("resets the form when reset button is clicked", () => {
     render(<Registration />);
+    const nameInput = screen.getByRole("textbox", { name: /name/i });
+    fireEvent.change(nameInput, { target: { value: "John Doe" } });
+    expect(nameInput.value).toBe("John Doe");
+  
     const resetButton = screen.getByText("Reset");
     fireEvent.click(resetButton);
+  
+    expect(nameInput.value).toBe(""); 
   });
+  
 
   test("validates required fields", () => {
     render(<Registration />);
@@ -170,5 +176,16 @@ describe("Employee Registration Testing", () => {
     await waitFor(() => expect(axios.post).toHaveBeenCalled());
     expect(toast.error).toHaveBeenCalledWith("Failed to save employee details");
   });
+
+
+  test("adjusts textarea height dynamically when typing", () => {
+    render(<Registration />);
+  
+    const textarea = screen.getByRole("textbox", { name: /notes/i });
+    const initialHeight = textarea.style.height;
+    fireEvent.change(textarea, { target: { value: "This is a long note to test dynamic resizing." } });
+    expect(textarea.style.height).not.toBe(initialHeight);
+  });
+  
 
 });

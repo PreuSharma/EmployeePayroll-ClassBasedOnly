@@ -124,7 +124,17 @@ describe("Employee Dashboard Testing", () => {
     });
   });
 
-  
+  test("toggles search input visibility", () => {
+    render(<Dashboard />);
+    const searchButton = screen.getByRole("button", { name: /search/i });
+
+    fireEvent.click(searchButton);
+    expect(screen.getByPlaceholderText("Search")).toBeInTheDocument();
+
+    fireEvent.click(searchButton);
+    expect(screen.queryByPlaceholderText("Search")).not.toBeInTheDocument();
+  });
+
   test("filters employees based on search query", async () => {
     // Mock both jQuery.get (for initial fetch) and fetch (for search filtering)
     global.fetch = jest.fn(() =>
@@ -191,9 +201,46 @@ describe("Employee Dashboard Testing", () => {
     expect(JSON.parse(localStorage.getItem("editEmployee")).name).toBe("Bob");
   });
 
-
-
   
+  test("does not delete employee if confirmation is canceled", async () => {
+    global.confirm = jest.fn(() => false);
+    render(<Dashboard />);
+
+    const deleteButton = screen.getAllByRole("button", { name: /delete/i })[0];
+    fireEvent.click(deleteButton);
+
+    await waitFor(() => {
+      expect(jquery.ajax).not.toHaveBeenCalled();
+    });
+  });
+
+  test("stores employee data in localStorage when edit button is clicked", () => {
+    render(<Dashboard />);
+
+    const editButton = screen.getAllByRole("button", { name: /edit/i })[0];
+    fireEvent.click(editButton);
+
+    expect(localStorage.getItem("editEmployee")).toBeTruthy();
+    expect(JSON.parse(localStorage.getItem("editEmployee")).name).toBe("Bob");
+  });
+  
+
+  test("logs error and sets employees to an empty array if API response is not an array", async () => {
+
+    const consoleErrorSpy = jest.spyOn(console, "error").mockImplementation(() => {});
+    jquery.get.mockImplementation((url, callback) => callback({ message: "Invalid response" }));
+  
+    render(<Dashboard />);
+  
+    await waitFor(() => {
+
+      expect(consoleErrorSpy).toHaveBeenCalledWith("Unexpected response:", { message: "Invalid response" });
+      expect(screen.queryByText("Alice")).not.toBeInTheDocument();
+      expect(screen.queryByText("Bob")).not.toBeInTheDocument();
+      expect(screen.getByText(/No employee data found/i)).toBeInTheDocument();
+    });
+    consoleErrorSpy.mockRestore();
+  });
   
   
 });
