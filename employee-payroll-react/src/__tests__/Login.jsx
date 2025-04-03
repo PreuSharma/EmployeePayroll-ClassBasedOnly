@@ -1,8 +1,8 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import Login from "../pages/login/Login";
 import { jwtDecode } from "jwt-decode";
 import "@testing-library/jest-dom";
 import toast from "react-hot-toast";
+import Login from "../pages/login/Login";
 
 jest.mock("jwt-decode", () => ({
   jwtDecode: jest.fn(),
