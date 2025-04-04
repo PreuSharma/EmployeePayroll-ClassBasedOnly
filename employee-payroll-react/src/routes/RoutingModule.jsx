@@ -4,6 +4,7 @@ import HomePage from '../components/HomePage/HomePage';
 import Registration from '../pages/Registration/Registration';
 import Login from '../pages/login/Login';
 import Dashboard from '../pages/Dashboard/Dashboard';
+import GitHubCallback from '../pages/login/GithubCallback';
 
 export default function RoutingModule() {
 
@@ -13,6 +14,10 @@ export default function RoutingModule() {
                 <Login/>
             ),
         },
+        {
+            path: 'github/callback',
+            element: <GitHubCallback />
+          },
         {
             path:'homePage',
             element: (
@@ -29,6 +34,7 @@ export default function RoutingModule() {
                 },
             ]
         }
+        
     ]);
   return (
         <RouterProvider router={route} />
