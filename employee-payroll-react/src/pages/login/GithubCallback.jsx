@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const GitHubCallback = () => {
   const navigate = useNavigate();
@@ -9,13 +9,11 @@ const GitHubCallback = () => {
 
   const clientId = process.env.REACT_APP_GITHUB_CLIENT_ID;
   const clientSecret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
-
   useEffect(() => {
     const fetchGitHubUser = async () => {
-      const code = new URLSearchParams(location.search).get('code');
-
+      const code = new URLSearchParams(location.search).get("code");
       if (!code) {
-        setError('No code found');
+        setError("No code found");
         setLoading(false);
         return;
       }
@@ -24,52 +22,56 @@ const GitHubCallback = () => {
         const tokenUrl = `https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token`;
 
         const response = await fetch(tokenUrl, {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
+            "Content-Type": "application/json",
+            Accept: "application/json",
           },
           body: JSON.stringify({
             client_id: clientId,
             client_secret: clientSecret,
             code,
-            redirect_uri: process.env.REACT_APP_GITHUB_REDIRECT_URI
-          })
+            redirect_uri: process.env.REACT_APP_GITHUB_REDIRECT_URI,
+          }),
         });
 
         const tokenData = await response.json();
         const accessToken = tokenData.access_token;
+        // console.log("Access Token:", accessToken);
 
-        const userResponse = await fetch('https://api.github.com/user', {
+        const userResponse = await fetch("https://api.github.com/user", {
           headers: {
-            Authorization: `token ${accessToken}`
-          }
+            Authorization: `Bearer ${accessToken}`,
+            Accept: "application/vnd.github+json",
+          },
         });
-
         const userData = await userResponse.json();
 
-        const emailResponse = await fetch('https://api.github.com/user/emails', {
-          headers: {
-            Authorization: `token ${accessToken}`
+        const emailResponse = await fetch(
+          "https://api.github.com/user/emails",
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+              Accept: "application/vnd.github+json",
+            },
           }
-        });
+        );
 
         const emails = await emailResponse.json();
-        const primaryEmail = emails.find(email => email.primary)?.email || emails[0]?.email;
-
+        const primaryEmail =
+          emails.find((email) => email.primary)?.email || emails[0]?.email;
         const userInfo = {
-          name: userData.name,
-          email: primaryEmail
+          name: userData.name || userData.login,
+          email: primaryEmail,
         };
 
-        localStorage.setItem('user', JSON.stringify(userInfo));
-        localStorage.setItem('credential', accessToken);
-        localStorage.setItem('authProvider', 'github');
+        localStorage.setItem("user", JSON.stringify(userInfo));
+        localStorage.setItem("credential", accessToken);
+        localStorage.setItem("authProvider", "github");
 
-        navigate('/homePage/dashboard');
-
+        navigate("/homePage/dashboard");
       } catch (err) {
-        setError('GitHub login failed: ' + err.message);
+        setError("GitHub login failed: " + err.message);
         setLoading(false);
       }
     };
@@ -78,13 +80,13 @@ const GitHubCallback = () => {
   }, [location, navigate, clientId, clientSecret]);
 
   return (
-    <div style={{ padding: '40px', textAlign: 'center' }}>
+    <div style={{ padding: "40px", textAlign: "center" }}>
       {loading ? (
         <h2>Authenticating with GitHub...</h2>
       ) : (
         <div>
-          <p style={{ color: 'red' }}>{error}</p>
-          <button onClick={() => navigate('/')}>Back to Login</button>
+          <p style={{ color: "red" }}>{error}</p>
+          <button onClick={() => navigate("/")}>Back to Login</button>
         </div>
       )}
     </div>
